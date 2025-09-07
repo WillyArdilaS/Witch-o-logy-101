@@ -5,7 +5,6 @@ public class DraggableItem : MonoBehaviour
 {
     // === Item ===
     [SerializeField] private ItemData itemData;
-    [SerializeField] private bool isVisible = true;
 
     // === Drag movement ===
     private Rigidbody2D rb2D;
@@ -16,8 +15,6 @@ public class DraggableItem : MonoBehaviour
 
     // === Properties ===
     public ItemData ItemData => itemData;
-    public bool IsVisible => isVisible;
-    public Rigidbody2D RB2D => rb2D;
 
     protected virtual void Awake()
     {
@@ -26,9 +23,11 @@ public class DraggableItem : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    void OnEnable()
+    public void ResetItem()
     {
         spriteRend.sortingOrder = layerNumber; // Reset order in layer
+        rb2D.bodyType = RigidbodyType2D.Static;
+        gameObject.SetActive(true);
     }
 
     void OnMouseDown()

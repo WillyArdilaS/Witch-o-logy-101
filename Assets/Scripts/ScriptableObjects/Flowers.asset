@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Flores
   type: 0
-  startPosition: {x: -3.4239998, y: 2.241}
-  respawnTime: 2
+  startPosition: {x: -0.03600037, y: 0.514}
+  respawnTime: 0.5

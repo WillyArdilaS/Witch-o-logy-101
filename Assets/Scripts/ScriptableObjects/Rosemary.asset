@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Romero
   type: 0
   startPosition: {x: 2.9339995, y: -0.90800005}
-  respawnTime: 2
+  respawnTime: 0.5

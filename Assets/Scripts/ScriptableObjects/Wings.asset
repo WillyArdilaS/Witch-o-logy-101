@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "Alas de murci\xE9lago"
   type: 0
-  startPosition: {x: -5.0319996, y: 2.213}
-  respawnTime: 2
+  startPosition: {x: -1.6440002, y: 0.486}
+  respawnTime: 0.5

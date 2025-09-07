@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Botella 2
   type: 1
   startPosition: {x: 8.172497, y: -0.23509458}
-  respawnTime: 2
+  respawnTime: 0.5

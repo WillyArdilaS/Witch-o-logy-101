@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Esencia de
   type: 0
   startPosition: {x: 0.6829995, y: -0.96500003}
-  respawnTime: 2
+  respawnTime: 0.5

@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Esencia de amor
   type: 0
   startPosition: {x: 1.3259996, y: -0.6330001}
-  respawnTime: 2
+  respawnTime: 0.5

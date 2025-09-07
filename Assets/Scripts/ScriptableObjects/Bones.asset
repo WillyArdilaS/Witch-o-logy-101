@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Huesos
   type: 0
   startPosition: {x: -1.682, y: -0.873}
-  respawnTime: 2
+  respawnTime: 0.5

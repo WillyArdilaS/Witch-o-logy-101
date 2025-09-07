@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Esencia de riqueza
   type: 0
   startPosition: {x: 1.9199997, y: -0.96400005}
-  respawnTime: 2
+  respawnTime: 0.5

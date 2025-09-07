@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Ojos
   type: 0
   startPosition: {x: -0.50200045, y: -0.95000005}
-  respawnTime: 2
+  respawnTime: 0.5

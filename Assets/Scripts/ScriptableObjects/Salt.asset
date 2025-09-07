@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sal
   type: 0
-  startPosition: {x: -1.76, y: 2.23}
-  respawnTime: 2
+  startPosition: {x: 1.6279997, y: 0.50299996}
+  respawnTime: 0.5

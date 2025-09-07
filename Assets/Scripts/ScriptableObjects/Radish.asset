@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: "R\xE1bano"
   type: 0
   startPosition: {x: -2.9010005, y: -0.83500004}
-  respawnTime: 2
+  respawnTime: 0.5
