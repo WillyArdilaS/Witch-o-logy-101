@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da327b50c4431a41937524a0fe967cc, type: 3}
+  m_Name: Eyes
+  m_EditorClassIdentifier: 
+  itemName: Ojos
+  type: 0
+  startPosition: {x: -0.50200045, y: -0.95000005}
+  respawnTime: 2
