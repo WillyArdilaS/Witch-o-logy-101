@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 109940843}
   - component: {fileID: 109940846}
   - component: {fileID: 109940848}
+  - component: {fileID: 109940849}
   m_Layer: 0
   m_Name: Radish
   m_TagString: Untagged
@@ -388,6 +389,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &109940849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109940838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &183542625
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +416,7 @@ GameObject:
   - component: {fileID: 183542630}
   - component: {fileID: 183542632}
   - component: {fileID: 183542634}
+  - component: {fileID: 183542635}
   m_Layer: 0
   m_Name: Rosemary
   m_TagString: Untagged
@@ -578,6 +593,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &183542635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183542625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &224318292
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +872,7 @@ GameObject:
   - component: {fileID: 378101306}
   - component: {fileID: 378101308}
   - component: {fileID: 378101310}
+  - component: {fileID: 378101311}
   m_Layer: 0
   m_Name: Essence_01
   m_TagString: Untagged
@@ -1020,6 +1049,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &378101311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378101301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &388817162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1074,7 @@ GameObject:
   - component: {fileID: 388817163}
   - component: {fileID: 388817165}
   - component: {fileID: 388817166}
+  - component: {fileID: 388817167}
   m_Layer: 0
   m_Name: Cauldron_03
   m_TagString: Untagged
@@ -1167,6 +1210,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edca10c4e6bf5d4f80a160c623e017d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &388817167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388817162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &389792165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1340,7 @@ GameObject:
   - component: {fileID: 427889598}
   - component: {fileID: 427889600}
   - component: {fileID: 427889602}
+  - component: {fileID: 427889603}
   m_Layer: 0
   m_Name: Essence_03
   m_TagString: Untagged
@@ -1460,6 +1517,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &427889603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427889593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &465543530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2216,7 @@ GameObject:
   - component: {fileID: 797668018}
   - component: {fileID: 797668020}
   - component: {fileID: 797668022}
+  - component: {fileID: 797668023}
   m_Layer: 0
   m_Name: Bottle_02
   m_TagString: Untagged
@@ -2322,6 +2393,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &797668023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797668013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &847716877
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,6 +2420,7 @@ GameObject:
   - component: {fileID: 847716882}
   - component: {fileID: 847716884}
   - component: {fileID: 847716886}
+  - component: {fileID: 847716887}
   m_Layer: 0
   m_Name: Essence_02
   m_TagString: Untagged
@@ -2512,6 +2597,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &847716887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847716877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &978662470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2624,7 @@ GameObject:
   - component: {fileID: 978662475}
   - component: {fileID: 978662477}
   - component: {fileID: 978662479}
+  - component: {fileID: 978662480}
   m_Layer: 0
   m_Name: Bottle_01
   m_TagString: Untagged
@@ -2702,6 +2801,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &978662480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978662470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1012865080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2862,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1156623772}
   - component: {fileID: 1156623771}
+  - component: {fileID: 1156623775}
+  - component: {fileID: 1156623774}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -2827,6 +2941,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1433353505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1156623774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156623770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
+--- !u!61 &1156623775
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156623770}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.39, y: 5.04}
+    newSize: {x: 2.39, y: 5.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.39, y: 5.04}
+  m_EdgeRadius: 0
 --- !u!1 &1158345736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,6 +3179,7 @@ GameObject:
   - component: {fileID: 1235420110}
   - component: {fileID: 1235420112}
   - component: {fileID: 1235420114}
+  - component: {fileID: 1235420115}
   m_Layer: 0
   m_Name: Salt
   m_TagString: Untagged
@@ -3182,6 +3356,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1235420115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235420105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1263959386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,6 +3515,7 @@ GameObject:
   - component: {fileID: 1331737664}
   - component: {fileID: 1331737666}
   - component: {fileID: 1331737668}
+  - component: {fileID: 1331737669}
   m_Layer: 0
   m_Name: Bones
   m_TagString: Untagged
@@ -3504,6 +3692,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1331737669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331737659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1352780548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3839,7 @@ GameObject:
   - component: {fileID: 1371382935}
   - component: {fileID: 1371382937}
   - component: {fileID: 1371382939}
+  - component: {fileID: 1371382940}
   m_Layer: 0
   m_Name: Wings
   m_TagString: Untagged
@@ -3814,6 +4016,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1371382940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371382930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1388100738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,6 +4508,7 @@ GameObject:
   - component: {fileID: 1644574018}
   - component: {fileID: 1644574020}
   - component: {fileID: 1644574022}
+  - component: {fileID: 1644574023}
   m_Layer: 0
   m_Name: Eyes
   m_TagString: Untagged
@@ -4469,6 +4685,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1644574023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644574013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1665595224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4481,6 +4710,7 @@ GameObject:
   - component: {fileID: 1665595225}
   - component: {fileID: 1665595227}
   - component: {fileID: 1665595228}
+  - component: {fileID: 1665595229}
   m_Layer: 0
   m_Name: Cauldron_02
   m_TagString: Untagged
@@ -4616,6 +4846,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edca10c4e6bf5d4f80a160c623e017d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1665595229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665595224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1671719810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4918,7 @@ GameObject:
   - component: {fileID: 1781517363}
   - component: {fileID: 1781517365}
   - component: {fileID: 1781517367}
+  - component: {fileID: 1781517368}
   m_Layer: 0
   m_Name: Flowers
   m_TagString: Untagged
@@ -4851,6 +5095,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1781517368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781517358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1882312003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,6 +5207,7 @@ GameObject:
   - component: {fileID: 1889671283}
   - component: {fileID: 1889671285}
   - component: {fileID: 1889671286}
+  - component: {fileID: 1889671287}
   m_Layer: 0
   m_Name: Cauldron_01
   m_TagString: Untagged
@@ -5085,6 +5343,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edca10c4e6bf5d4f80a160c623e017d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1889671287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889671282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &1895437071
 GameObject:
   m_ObjectHideFlags: 0
@@ -5441,6 +5712,7 @@ GameObject:
   - component: {fileID: 2014667594}
   - component: {fileID: 2014667596}
   - component: {fileID: 2014667598}
+  - component: {fileID: 2014667599}
   m_Layer: 0
   m_Name: Bottle_03
   m_TagString: Untagged
@@ -5617,6 +5889,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29448f5ce285afd40a185dc0134c601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2014667599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014667589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee467a0f10889cf4a990fa9bc565cc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
 --- !u!1 &2060645713
 GameObject:
   m_ObjectHideFlags: 0

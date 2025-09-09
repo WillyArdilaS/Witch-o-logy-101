@@ -7,7 +7,7 @@ public class DraggableItem : MonoBehaviour
     [SerializeField] private ItemData itemData;
 
     // === Drag movement ===
-    private Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;    
 
     // === Order in layer ===
     [SerializeField] private int layerNumber;
@@ -35,7 +35,7 @@ public class DraggableItem : MonoBehaviour
         rb2D.bodyType = RigidbodyType2D.Static;
         spriteRend.sortingOrder = 4;
         itemData.ShowData();
-    }
+    }    
 
     void OnMouseDrag()
     {
