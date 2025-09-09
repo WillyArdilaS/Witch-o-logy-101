@@ -4,14 +4,23 @@ using UnityEngine;
 public class DropArea : MonoBehaviour
 {
     // === Events ===
-    public event Action OnDropArea;
+    public event Action<DraggableItem> IngredientDropped;
+    public event Action<IngredientContainer> BottleDropped;
 
     public void OnItemDrop(DraggableItem item)
     {
-        item.GetComponentInParent<Respawner>().SubscribeToDropAreaEvent(this);
-
         Debug.Log("Se ha agregado: " + item.ItemData.ItemName);
-        item.gameObject.SetActive(false);
-        OnDropArea?.Invoke();
+
+        if (item.ItemData.Type.ToString() == "Ingredient")
+        {
+            item.GetComponentInParent<Respawner>().SubscribeToIngredientDroppedEvent(this);
+            IngredientDropped?.Invoke(item);
+        }
+        else if (item.ItemData.Type.ToString() == "Bottle")
+        {
+            item.GetComponentInParent<BottleFiller>().SubscribeToBottleDroppedEvent(this);
+            item.GetComponentInParent<BottleDeliverer>().SubscribeToBottleDroppedEvent(this);
+            BottleDropped?.Invoke(gameObject.GetComponent<IngredientContainer>());
+        }
     }
 }

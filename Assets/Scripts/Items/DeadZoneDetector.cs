@@ -4,13 +4,13 @@ using UnityEngine;
 public class DeadZoneDetector : MonoBehaviour
 {
     // === Events ===
-    public event Action OnDeadZone;
+    public event Action DeadZoneEntered;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DeadZone"))
         {
-            OnDeadZone?.Invoke();
+            DeadZoneEntered?.Invoke();
         }
     }
 }

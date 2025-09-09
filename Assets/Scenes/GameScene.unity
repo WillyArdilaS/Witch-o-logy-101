@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 224318293}
   - component: {fileID: 224318294}
   m_Layer: 0
-  m_Name: FlowersRespawner
+  m_Name: FlowersManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,7 +824,7 @@ GameObject:
   - component: {fileID: 370978322}
   - component: {fileID: 370978323}
   m_Layer: 0
-  m_Name: EssenceRespawner_03
+  m_Name: EssenceManager_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1075,6 +1075,7 @@ GameObject:
   - component: {fileID: 388817165}
   - component: {fileID: 388817166}
   - component: {fileID: 388817167}
+  - component: {fileID: 388817168}
   m_Layer: 0
   m_Name: Cauldron_03
   m_TagString: Untagged
@@ -1223,6 +1224,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
+--- !u!114 &388817168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388817162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb14064f4162e4b42840c9068ea90398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientList: []
 --- !u!1 &389792165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,8 +1853,10 @@ GameObject:
   m_Component:
   - component: {fileID: 552345907}
   - component: {fileID: 552345908}
+  - component: {fileID: 552345909}
+  - component: {fileID: 552345910}
   m_Layer: 0
-  m_Name: BottleRespawner_01
+  m_Name: BottleManager_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1874,6 +1890,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fcaf4b2ab6b3e4e916fd24f9869365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &552345909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552345906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267bb50e4733014cb7db9714f494a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientListInBottle: []
+--- !u!114 &552345910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552345906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7712400abf6f3934ebeed2ed1e6d9938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tablePosition: {x: -6.9, y: -0.7}
 --- !u!1 &557476253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2210,7 @@ GameObject:
   - component: {fileID: 756862868}
   - component: {fileID: 756862869}
   m_Layer: 0
-  m_Name: RadishRespawner
+  m_Name: RadishManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3026,7 +3068,7 @@ Transform:
   m_GameObject: {fileID: 1158345736}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.2, z: 0}
+  m_LocalPosition: {x: 0, y: -6.8, z: 0}
   m_LocalScale: {x: 18, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3379,8 +3421,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1263959387}
   - component: {fileID: 1263959388}
+  - component: {fileID: 1263959389}
+  - component: {fileID: 1263959390}
   m_Layer: 0
-  m_Name: BottleRespawner_03
+  m_Name: BottleManager_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3414,6 +3458,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fcaf4b2ab6b3e4e916fd24f9869365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1263959389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263959386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267bb50e4733014cb7db9714f494a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientListInBottle: []
+--- !u!114 &1263959390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263959386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7712400abf6f3934ebeed2ed1e6d9938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tablePosition: {x: -6.9, y: -0.7}
 --- !u!1 &1276020707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3786,7 @@ GameObject:
   - component: {fileID: 1352780549}
   - component: {fileID: 1352780550}
   m_Layer: 0
-  m_Name: EssenceRespawner_01
+  m_Name: EssenceManager_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4196,7 +4266,7 @@ GameObject:
   - component: {fileID: 1445209901}
   - component: {fileID: 1445209902}
   m_Layer: 0
-  m_Name: EyesRespawner
+  m_Name: EyesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4241,7 +4311,7 @@ GameObject:
   - component: {fileID: 1512241511}
   - component: {fileID: 1512241512}
   m_Layer: 0
-  m_Name: BonesRespawner
+  m_Name: BonesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4459,8 +4529,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1561639118}
   - component: {fileID: 1561639119}
+  - component: {fileID: 1561639120}
+  - component: {fileID: 1561639121}
   m_Layer: 0
-  m_Name: BottleRespawner_02
+  m_Name: BottleManager_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4494,6 +4566,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fcaf4b2ab6b3e4e916fd24f9869365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1561639120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561639117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267bb50e4733014cb7db9714f494a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientListInBottle: []
+--- !u!114 &1561639121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561639117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7712400abf6f3934ebeed2ed1e6d9938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tablePosition: {x: -6.9, y: -0.7}
 --- !u!1 &1644574013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4711,6 +4809,7 @@ GameObject:
   - component: {fileID: 1665595227}
   - component: {fileID: 1665595228}
   - component: {fileID: 1665595229}
+  - component: {fileID: 1665595230}
   m_Layer: 0
   m_Name: Cauldron_02
   m_TagString: Untagged
@@ -4859,6 +4958,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
+--- !u!114 &1665595230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665595224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb14064f4162e4b42840c9068ea90398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientList: []
 --- !u!1 &1671719810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,7 +4982,7 @@ GameObject:
   - component: {fileID: 1671719811}
   - component: {fileID: 1671719812}
   m_Layer: 0
-  m_Name: RosemaryRespawner
+  m_Name: RosemaryManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5208,6 +5320,7 @@ GameObject:
   - component: {fileID: 1889671285}
   - component: {fileID: 1889671286}
   - component: {fileID: 1889671287}
+  - component: {fileID: 1889671288}
   m_Layer: 0
   m_Name: Cauldron_01
   m_TagString: Untagged
@@ -5356,6 +5469,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
+--- !u!114 &1889671288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889671282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb14064f4162e4b42840c9068ea90398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientList: []
 --- !u!1 &1895437071
 GameObject:
   m_ObjectHideFlags: 0
@@ -5367,7 +5493,7 @@ GameObject:
   - component: {fileID: 1895437072}
   - component: {fileID: 1895437073}
   m_Layer: 0
-  m_Name: WingsRespawner
+  m_Name: WingsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5453,7 +5579,7 @@ GameObject:
   - component: {fileID: 1950743704}
   - component: {fileID: 1950743705}
   m_Layer: 0
-  m_Name: SaltRespawner
+  m_Name: SaltManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5947,7 +6073,7 @@ GameObject:
   - component: {fileID: 2126202814}
   - component: {fileID: 2126202815}
   m_Layer: 0
-  m_Name: EssenceRespawner_02
+  m_Name: EssenceManager_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
