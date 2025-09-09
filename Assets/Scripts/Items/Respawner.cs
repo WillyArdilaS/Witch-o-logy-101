@@ -14,7 +14,7 @@ public class Respawner : MonoBehaviour
     private GameObject itemToRespawn;
 
     // === Event handler ===
-    private Action<DraggableItem> ingredientDroppedAction;
+    private Action<DraggableItem> onIngredientDroppedHandler;
 
     // === Coroutines ===
     private Coroutine cooldownRoutine;
@@ -46,16 +46,16 @@ public class Respawner : MonoBehaviour
     public void SubscribeToIngredientDroppedEvent(DropArea dropArea)
     {
         dropAreaScript = dropArea;
-        ingredientDroppedAction = _ => StartCooldown(); // To save a reference to the event due to lambda
-        dropAreaScript.IngredientDropped += ingredientDroppedAction;
+        onIngredientDroppedHandler = _ => StartCooldown(); // To save a reference to the event due to lambda
+        dropAreaScript.IngredientDropped += onIngredientDroppedHandler;
     }
 
     public void UnsubscribeToIngredientDropped()
     {
-        if (dropAreaScript != null && ingredientDroppedAction != null)
+        if (dropAreaScript != null && onIngredientDroppedHandler != null)
         {
-            dropAreaScript.IngredientDropped -= ingredientDroppedAction;
-            ingredientDroppedAction = null;
+            dropAreaScript.IngredientDropped -= onIngredientDroppedHandler;
+            onIngredientDroppedHandler = null;
         }
     }
 

@@ -11,12 +11,12 @@ public class DropArea : MonoBehaviour
     {
         Debug.Log("Se ha agregado: " + item.ItemData.ItemName);
 
-        if (item.ItemData.Type.ToString() == "Ingredient")
+        if (item.ItemData.Type == ItemData.ItemType.Ingredient)
         {
             item.GetComponentInParent<Respawner>().SubscribeToIngredientDroppedEvent(this);
             IngredientDropped?.Invoke(item);
         }
-        else if (item.ItemData.Type.ToString() == "Bottle")
+        else if (item.ItemData.Type == ItemData.ItemType.Bottle)
         {
             item.GetComponentInParent<BottleFiller>().SubscribeToBottleDroppedEvent(this);
             item.GetComponentInParent<BottleDeliverer>().SubscribeToBottleDroppedEvent(this);

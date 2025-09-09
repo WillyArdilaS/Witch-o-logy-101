@@ -56,5 +56,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Mermelada _1.sln"
+    "dotnet.defaultSolution": "Mermelada _1.sln",
+    "conventionalCommits.scopes": [
+        "gameplay"
+    ]
 }

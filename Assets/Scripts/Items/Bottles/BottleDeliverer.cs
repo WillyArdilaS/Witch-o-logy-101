@@ -11,7 +11,7 @@ public class BottleDeliverer : MonoBehaviour
     private GameObject bottle;
     
     // === Event handler ===
-    private Action<IngredientContainer> bottleDroppedAction;
+    private Action<IngredientContainer> onBottleDroppedHandler;
 
     void Awake()
     {
@@ -29,16 +29,16 @@ public class BottleDeliverer : MonoBehaviour
     public void SubscribeToBottleDroppedEvent(DropArea dropArea)
     {
         dropAreaScript = dropArea;
-        bottleDroppedAction = _ => DeliverOrder(); // To save a reference to the event due to lambda
-        dropAreaScript.BottleDropped += bottleDroppedAction;
+        onBottleDroppedHandler = _ => DeliverOrder(); // To save a reference to the event due to lambda
+        dropAreaScript.BottleDropped += onBottleDroppedHandler;
     }
 
     public void UnsubscribeToBottleDropped()
     {
-        if (dropAreaScript != null && bottleDroppedAction != null)
+        if (dropAreaScript != null && onBottleDroppedHandler != null)
         {
-            dropAreaScript.BottleDropped -= bottleDroppedAction;
-            bottleDroppedAction = null;
+            dropAreaScript.BottleDropped -= onBottleDroppedHandler;
+            onBottleDroppedHandler = null;
         }
     }
 
