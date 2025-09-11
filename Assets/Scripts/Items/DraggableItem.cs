@@ -33,8 +33,7 @@ public class DraggableItem : MonoBehaviour
     void OnMouseDown()
     {
         rb2D.bodyType = RigidbodyType2D.Static;
-        spriteRend.sortingOrder = 4;
-        itemData.ShowData();
+        spriteRend.sortingOrder = 5;
     }    
 
     void OnMouseDrag()
