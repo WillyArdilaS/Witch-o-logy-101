@@ -1333,8 +1333,7 @@ RectTransform:
   m_Children:
   - {fileID: 1012865081}
   - {fileID: 324759223}
-  - {fileID: 1773214087}
-  - {fileID: 1405909684}
+  - {fileID: 873576970}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2654,6 +2653,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.8784314, g: 0.7647059, b: 0.8784314, a: 1}
+--- !u!1 &873576969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873576970}
+  m_Layer: 5
+  m_Name: RecipeBook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &873576970
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873576969}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1773214087}
+  - {fileID: 1405909684}
+  m_Father: {fileID: 389792169}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &978662470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,12 +4258,12 @@ GameObject:
   - component: {fileID: 1405909686}
   - component: {fileID: 1405909685}
   m_Layer: 5
-  m_Name: RecipeBook
+  m_Name: BookImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1405909684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4235,13 +4271,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405909683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1044648337}
-  m_Father: {fileID: 389792169}
+  m_Father: {fileID: 873576970}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5181,12 +5217,12 @@ GameObject:
   - component: {fileID: 1773214089}
   - component: {fileID: 1773214088}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BookBg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1773214087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5194,12 +5230,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773214086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 389792169}
+  m_Father: {fileID: 873576970}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6300,6 +6336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110234418}
   - component: {fileID: 2110234417}
+  - component: {fileID: 2110234419}
   m_Layer: 0
   m_Name: OrderManager
   m_TagString: Untagged
@@ -6320,7 +6357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeBook: {fileID: 11400000, guid: 3c7a078554247f6419fb9b9031190a05, type: 2}
-  activeOrders: []
   orderImages:
   - {fileID: 21300000, guid: ff45060e40475fd448718ece503fb23d, type: 3}
   - {fileID: 21300000, guid: bc58ee8e086bda740a7948eb5f71d60d, type: 3}
@@ -6343,6 +6379,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dabfc6da90946ae4ea0362e0afaf180f, type: 3}
   - {fileID: 21300000, guid: 96a3dce6e4ef71e4e9fd705a3435b0ef, type: 3}
   - {fileID: 21300000, guid: 52345d29354ded04fbed2591ecbc184c, type: 3}
+  activeOrders: []
+  lifeTimeDefault: 0
 --- !u!4 &2110234418
 Transform:
   m_ObjectHideFlags: 0
@@ -6358,6 +6396,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2110234419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110234416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2d2676886d8324c8e45612f55d3e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderSpaces:
+  - {fileID: 477269238}
+  - {fileID: 1352884500}
+  - {fileID: 602365873}
+  orderPrefab: {fileID: 7607479338474950618, guid: 8d7c2ac54d8221c40bba0fbbe5fad0fd, type: 3}
 --- !u!1 &2126202813
 GameObject:
   m_ObjectHideFlags: 0

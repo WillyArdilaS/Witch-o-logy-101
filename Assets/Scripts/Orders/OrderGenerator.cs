@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour
 {
-    // === Orders ===
+    // === Order data ===
     [SerializeField] private RecipeBook recipeBook;
-    [SerializeField] private List<OrderData> activeOrders = new();
     [SerializeField] private Sprite[] orderImages;
-    
+
+    [Header("Order List")]
+    [SerializeField] private List<OrderData> activeOrders = new();
+
     // === Order creation ===
+    [Header("Order creation info")]
+    [SerializeField] private float lifeTimeDefault;
     private int totalOrders = 0;
     private RecipeData randomRecipe;
     private BottleData.BottleType randomBottleType;
 
     // === Events ===
-    public event Action OrderAdded;
+    public event Action<OrderData> OrderAdded;
 
     void Awake()
     {
         AddOrder();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            AddOrder();
+        }
     }
 
     private void AddOrder()
@@ -29,8 +41,9 @@ public class OrderGenerator : MonoBehaviour
         randomRecipe = recipeBook.GetRandomRecipe();
         randomBottleType = GetRandomBottleType();
 
-        OrderData newOrder = new(GenerateOrderID(), FindOrderImg(), randomRecipe, randomBottleType);
+        OrderData newOrder = new(GenerateOrderID(), FindOrderImg(), lifeTimeDefault, randomRecipe, randomBottleType);
         activeOrders.Add(newOrder);
+        OrderAdded?.Invoke(newOrder);
     }
 
     private BottleData.BottleType GetRandomBottleType()

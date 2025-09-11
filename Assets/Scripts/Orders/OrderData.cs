@@ -21,11 +21,11 @@ public class OrderData
     public BottleData.BottleType RequiredBottle => requiredBottle;
 
     // === Constructor ===
-    public OrderData(string orderID, Sprite orderImg, RecipeData recipe, BottleData.BottleType requiredBottle)
+    public OrderData(string orderID, Sprite orderImg, float lifeTime, RecipeData recipe, BottleData.BottleType requiredBottle)
     {
         this.orderID = orderID;
         this.orderImg = orderImg;
-        lifeTime = 15f;
+        this.lifeTime = lifeTime;
         state = OrderState.Pending;
         this.recipe = recipe;
         this.requiredBottle = requiredBottle;
