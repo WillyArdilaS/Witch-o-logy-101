@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c47f3d71b5a794fac3f72545a41349, type: 3}
+  m_Name: FrogPotion
+  m_EditorClassIdentifier: 
+  recipeName: "Poci\xF3n de conversi\xF3n a sapo"
+  recipeID: 3
+  requiredIngredients:
+  - {fileID: 11400000, guid: aec963893de18b041ab9e493f5e4a368, type: 2}
+  - {fileID: 11400000, guid: fbe6db56b6f5bdd4fafc20ae42769dc1, type: 2}
+  - {fileID: 11400000, guid: f7fb5910633dffe488c80b8559787a1e, type: 2}

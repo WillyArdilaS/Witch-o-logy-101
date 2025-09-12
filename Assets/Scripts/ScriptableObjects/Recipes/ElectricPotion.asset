@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c47f3d71b5a794fac3f72545a41349, type: 3}
+  m_Name: ElectricPotion
+  m_EditorClassIdentifier: 
+  recipeName: "Poci\xF3n el\xE9ctrica"
+  recipeID: 2
+  requiredIngredients:
+  - {fileID: 11400000, guid: 7c1141df26c85974787bbd48f3986685, type: 2}
+  - {fileID: 11400000, guid: 975185e221b8a3041846282b43f7a0c6, type: 2}
+  - {fileID: 11400000, guid: 2458c314f27b06049b33f2df1c19976c, type: 2}

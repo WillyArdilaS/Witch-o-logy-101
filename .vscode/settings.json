@@ -56,5 +56,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Mermelada _1.sln"
+    "dotnet.defaultSolution": "Witch-o-logy 101.sln",
+    "conventionalCommits.scopes": [
+        "gameplay"
+    ]
 }
