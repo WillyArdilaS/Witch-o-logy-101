@@ -13,11 +13,11 @@ public class Respawner : MonoBehaviour
     // === Item ===
     private GameObject itemToRespawn;
 
-    // === Event handler ===
-    private Action<DraggableItem> onIngredientDroppedHandler;
-
     // === Coroutines ===
     private Coroutine cooldownRoutine;
+
+    // === Event handler ===
+    private Action<DraggableItem> onIngredientDroppedHandler;
 
     void Awake()
     {
