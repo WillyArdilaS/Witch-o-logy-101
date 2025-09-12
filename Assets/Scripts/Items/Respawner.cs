@@ -16,7 +16,7 @@ public class Respawner : MonoBehaviour
     // === Coroutines ===
     private Coroutine cooldownRoutine;
 
-    // === Event handler ===
+    // === Event handlers ===
     private Action<DraggableItem> onIngredientDroppedHandler;
 
     void Awake()
@@ -33,11 +33,6 @@ public class Respawner : MonoBehaviour
         else
         {
             Debug.LogWarning("Este respawner no tiene ningun item asociado");
-        }
-
-        if (orderCheckerScript != null)
-        {
-            orderCheckerScript.OrderChecked += StartCooldown;
         }
     }
 

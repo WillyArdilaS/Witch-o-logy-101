@@ -12,6 +12,9 @@ public class OrderChecker : MonoBehaviour
     // === Bottles ===
     [SerializeField] private BottleDeliverer[] bottleDeliverers;
 
+    // === ===
+    private OrderData currentOrder;
+
     // === Events ===
     public event Action OrderChecked;
 
@@ -44,7 +47,7 @@ public class OrderChecker : MonoBehaviour
         // Downcast safety to convert ItemData to BottleData
         if (draggable.ItemData is BottleData bottleData)
         {
-            var parentRespawner = deliveredBottle.GetComponentInParent<Respawner>();
+            Transform bottleParent = deliveredBottle.transform.parent;
 
             // Search for matches between the bottle type and any of the orders
             List<OrderData> candidateOrders = orderManagerScript.ActiveOrders.FindAll(order => order.RequiredBottle == bottleData.BottleID);
@@ -54,15 +57,16 @@ public class OrderChecker : MonoBehaviour
                 if (CheckIngredients(deliveredBottle, order))
                 {
                     Debug.Log("La orden es correcta");
+                    currentOrder = order;
                     order.State = OrderData.OrderState.Delivered;
 
-                    StartCoroutine(InvokeOrderChecked(1f, deliveredBottle));
+                    StartCoroutine(InvokeOrderChecked(1f, bottleParent));
                     return;
                 }
             }
 
             Debug.Log("Ninguna orden coincide con esa botella + ingredientes");
-            StartCoroutine(InvokeOrderChecked(1f, deliveredBottle));
+            StartCoroutine(InvokeOrderChecked(1f, bottleParent));
         }
     }
 
@@ -81,11 +85,12 @@ public class OrderChecker : MonoBehaviour
     }
 
     // === Activate respawn with delay method ===
-    private IEnumerator InvokeOrderChecked(float delay, GameObject deliveredBottle)
+    private IEnumerator InvokeOrderChecked(float delay, Transform bottleParent)
     {
         yield return new WaitForSeconds(delay);
 
-        deliveredBottle.GetComponentInParent<Respawner>().SubscribeToOrderCheckedEvent(this);
+        bottleParent.GetComponent<Respawner>().SubscribeToOrderCheckedEvent(this);
+        bottleParent.GetComponent<BottleFiller>().SubscribeToOrderCheckedEvent(this);
         OrderChecked?.Invoke();
     }
 

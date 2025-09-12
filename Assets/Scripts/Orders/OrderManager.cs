@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(OrderCreator))]
+[RequireComponent(typeof(OrderCreator), typeof(OrderChecker))]
 public class OrderManager : MonoBehaviour
 {
     // === Scripts ===
@@ -14,13 +13,15 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private float orderCooldown;
     [SerializeField] private List<OrderData> activeOrders = new();
     private OrderData newOrder;
-    [SerializeField] private bool canCreateNewOrder = true;
+    private bool canCreateNewOrder = true;
 
     // === Coroutines ===
     private Coroutine createOrderRoutine;
 
     // === Events ===
     public event Action<OrderData> OrderAdded;
+    public event Action<OrderData> OrderCompleted;
+    public event Action<OrderData> OrderFailed;
 
     // === Properties ===
     public List<OrderData> ActiveOrders => activeOrders;
@@ -34,6 +35,7 @@ public class OrderManager : MonoBehaviour
 
     void Update()
     {
+        // Management of new order creation
         if (canCreateNewOrder && createOrderRoutine == null)
         {
             createOrderRoutine = StartCoroutine(CreateNewOrder());
@@ -42,6 +44,13 @@ public class OrderManager : MonoBehaviour
         {
             StopCoroutine(createOrderRoutine);
             createOrderRoutine = null;
+        }
+
+        // Review and deletion of delivered or failed orders
+        List<OrderData> ordersUpdated = activeOrders.FindAll(order => (order.State == OrderData.OrderState.Delivered) || (order.State == OrderData.OrderState.Failed));
+        foreach (var order in ordersUpdated)
+        {
+            DeleteOrder(order);
         }
     }
 
@@ -54,6 +63,20 @@ public class OrderManager : MonoBehaviour
             newOrder = orderCreatorScript.CreateOrder();
             activeOrders.Add(newOrder);
             OrderAdded?.Invoke(newOrder);
+        }
+    }
+
+    private void DeleteOrder(OrderData orderToDelete)
+    {
+        if (orderToDelete.State == OrderData.OrderState.Delivered)
+        {
+            activeOrders.Remove(orderToDelete);
+            OrderCompleted?.Invoke(orderToDelete);
+        }
+        else if (orderToDelete.State == OrderData.OrderState.Failed)
+        {
+            activeOrders.Remove(orderToDelete);
+            OrderFailed?.Invoke(orderToDelete);
         }
     }
 }

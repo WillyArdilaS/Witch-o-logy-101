@@ -13,6 +13,9 @@ public class OrderCreator : MonoBehaviour
     private RecipeData randomRecipe;
     private BottleData.BottleType randomBottleType;
 
+    // === Coroutines ===
+    private Coroutine lifeTimerRoutine;
+
     public OrderData CreateOrder()
     {
         totalOrders++;
@@ -21,6 +24,7 @@ public class OrderCreator : MonoBehaviour
         randomBottleType = GetRandomBottleType();
 
         OrderData newOrder = new(GenerateOrderID(), FindOrderImg(), lifeTimeDefault, randomRecipe, randomBottleType);
+        StartLifeTimer(newOrder);
         return newOrder;
     }
 
@@ -46,5 +50,11 @@ public class OrderCreator : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void StartLifeTimer(OrderData order)
+    {
+        if (lifeTimerRoutine != null) StopCoroutine(order.LifeTimer());
+        lifeTimerRoutine = StartCoroutine(order.LifeTimer());
     }
 }

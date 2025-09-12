@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [System.Serializable]
@@ -29,5 +30,21 @@ public class OrderData
         state = OrderState.Pending;
         this.requiredRecipe = requiredRecipe;
         this.requiredBottle = requiredBottle;
+    }
+
+    // === Order expiration method ===
+    public IEnumerator LifeTimer()
+    {
+        while (lifeTime > 0 && state == OrderState.Pending)
+        {
+            lifeTime--;
+            yield return new WaitForSeconds(1);
+        }
+
+        if (lifeTime == 0)
+        {
+            state = OrderState.Failed;
+            Debug.Log($"La orden {OrderID} no fue entregada");
+        }
     }
 }

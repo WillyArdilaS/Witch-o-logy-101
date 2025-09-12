@@ -5,6 +5,7 @@ public class BottleFiller : MonoBehaviour
 {
     // === Scripts ===
     private DropArea dropAreaScript;
+    private OrderChecker orderCheckerScript;
 
     // === Ingredients ===
     [SerializeField] private List<IngredientData> ingredientListInBottle = new();
@@ -19,9 +20,23 @@ public class BottleFiller : MonoBehaviour
         dropAreaScript.BottleDropped += FillBottle;
     }
 
+    public void SubscribeToOrderCheckedEvent(OrderChecker orderChecker)
+    {
+        orderCheckerScript = orderChecker;
+        orderChecker.OrderChecked += EmptyBottle;
+    }
+
     public void UnsubscribeToBottleDroppedEvent()
     {
         dropAreaScript.BottleDropped -= FillBottle;
+    }
+
+    public void UnsubscribeToOrderCheckedEvent()
+    {
+        if (orderCheckerScript != null)
+        {
+            orderCheckerScript.OrderChecked -= EmptyBottle;
+        }
     }
 
     // === List management methods ===

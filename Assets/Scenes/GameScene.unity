@@ -6385,8 +6385,8 @@ GameObject:
   - component: {fileID: 2110234418}
   - component: {fileID: 2110234420}
   - component: {fileID: 2110234417}
-  - component: {fileID: 2110234419}
   - component: {fileID: 2110234421}
+  - component: {fileID: 2110234419}
   m_Layer: 0
   m_Name: OrderManager
   m_TagString: Untagged
@@ -6476,7 +6476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderCooldown: 2.5
   activeOrders: []
-  canCreateNewOrder: 0
 --- !u!114 &2110234421
 MonoBehaviour:
   m_ObjectHideFlags: 0
