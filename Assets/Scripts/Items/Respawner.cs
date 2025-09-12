@@ -35,7 +35,6 @@ public class Respawner : MonoBehaviour
             Debug.LogWarning("Este respawner no tiene ningun item asociado");
         }
 
-        orderCheckerScript = GetComponent<OrderChecker>();
         if (orderCheckerScript != null)
         {
             orderCheckerScript.OrderChecked += StartCooldown;
@@ -50,12 +49,26 @@ public class Respawner : MonoBehaviour
         dropAreaScript.IngredientDropped += onIngredientDroppedHandler;
     }
 
-    public void UnsubscribeToIngredientDropped()
+    public void SubscribeToOrderCheckedEvent(OrderChecker orderChecker)
+    {
+        orderCheckerScript = orderChecker;
+        orderChecker.OrderChecked += StartCooldown;
+    }
+
+    public void UnsubscribeToIngredientDroppedEvent()
     {
         if (dropAreaScript != null && onIngredientDroppedHandler != null)
         {
             dropAreaScript.IngredientDropped -= onIngredientDroppedHandler;
             onIngredientDroppedHandler = null;
+        }
+    }
+
+    public void UnsubscribeToOrderCheckedEvent()
+    {
+        if (orderCheckerScript != null)
+        {
+            orderCheckerScript.OrderChecked -= StartCooldown;
         }
     }
 
@@ -77,6 +90,8 @@ public class Respawner : MonoBehaviour
     {
         itemToRespawn.transform.position = draggableItemScript.ItemData.StartPosition;
         draggableItemScript.ResetItem();
-        UnsubscribeToIngredientDropped();
+        
+        UnsubscribeToIngredientDroppedEvent();
+        UnsubscribeToOrderCheckedEvent();
     }
 }

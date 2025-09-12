@@ -8,10 +8,11 @@ public class IngredientContainer : MonoBehaviour
     private DropArea dropAreaScript;
 
     // === Ingredients ===
-    [SerializeField] private List<DraggableItem> ingredientList = new();
+    [SerializeField] private int ingredientsLimit;
+    [SerializeField] private List<IngredientData> ingredientList = new();
 
     // === Properties ===
-    public List<DraggableItem> IngredientList => ingredientList;
+    public List<IngredientData> IngredientList => ingredientList;
 
     void Awake()
     {
@@ -22,7 +23,10 @@ public class IngredientContainer : MonoBehaviour
 
     private void AddIngredient(DraggableItem ingredient)
     {
-        ingredientList.Add(ingredient);
+        if (ingredientList.Count < ingredientsLimit)
+        {
+            ingredientList.Add(ingredient.ItemData as IngredientData);
+        }
     }
 
     public void EmptyContainer()

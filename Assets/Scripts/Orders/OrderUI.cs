@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(OrderGenerator))]
+[RequireComponent(typeof(OrderManager))]
 public class OrderUI : MonoBehaviour
 {
     // === Scripts ===
-    private OrderGenerator orderGeneratorScript;
+    private OrderManager orderManagerScript;
 
     // === UI containers ===
     [SerializeField] private GameObject[] orderSpaces;
@@ -16,9 +16,9 @@ public class OrderUI : MonoBehaviour
 
     void Awake()
     {
-        orderGeneratorScript = GetComponent<OrderGenerator>();
+        orderManagerScript = GetComponent<OrderManager>();
 
-        orderGeneratorScript.OrderAdded += ShowOrder;
+        orderManagerScript.OrderAdded += ShowOrder;
     }
 
     private void ShowOrder(OrderData lastOrder)

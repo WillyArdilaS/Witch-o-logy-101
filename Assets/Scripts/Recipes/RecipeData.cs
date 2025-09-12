@@ -7,11 +7,11 @@ public class RecipeData : ScriptableObject
     public enum RecipeType { Beauty, Death, Electric, Frog, Intelligence, Love, Time }
     [SerializeField] private string recipeName;
     [SerializeField] private RecipeType recipeID;
-    [SerializeField] private ItemData[] requiredIngredients = new ItemData[3];
+    [SerializeField] private IngredientData[] requiredIngredients = new IngredientData[3];
     
 
     // === Properties ===
     public string RecipeName => recipeName;
     public RecipeType RecipeID => recipeID;
-    public ItemData[] RequiredIngredients => requiredIngredients;
+    public IngredientData[] RequiredIngredients => requiredIngredients;
 }

@@ -7,7 +7,10 @@ public class BottleFiller : MonoBehaviour
     private DropArea dropAreaScript;
 
     // === Ingredients ===
-    [SerializeField] private List<DraggableItem> ingredientListInBottle = new();
+    [SerializeField] private List<IngredientData> ingredientListInBottle = new();
+
+    // === Properties ===
+    public List<IngredientData> IngredientListInBottle => ingredientListInBottle;
 
     // === Event subscriptions methods ===
     public void SubscribeToBottleDroppedEvent(DropArea dropArea)
@@ -35,5 +38,6 @@ public class BottleFiller : MonoBehaviour
     private void EmptyBottle()
     {
         ingredientListInBottle.Clear();
+        UnsubscribeToBottleDroppedEvent();
     }
 }

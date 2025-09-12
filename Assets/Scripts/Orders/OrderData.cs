@@ -9,7 +9,7 @@ public class OrderData
     [SerializeField] private Sprite orderImg;
     [SerializeField] private float lifeTime;
     [SerializeField] private OrderState state;
-    [SerializeField] private RecipeData recipe;
+    [SerializeField] private RecipeData requiredRecipe;
     [SerializeField] private BottleData.BottleType requiredBottle;
 
     // === Properties ===
@@ -17,17 +17,17 @@ public class OrderData
     public Sprite OrderImg => orderImg;
     public float LifeTime => lifeTime;
     public OrderState State { get => state; set => state = value; }
-    public RecipeData Recipe => recipe;
+    public RecipeData RequiredRecipe => requiredRecipe;
     public BottleData.BottleType RequiredBottle => requiredBottle;
 
     // === Constructor ===
-    public OrderData(string orderID, Sprite orderImg, float lifeTime, RecipeData recipe, BottleData.BottleType requiredBottle)
+    public OrderData(string orderID, Sprite orderImg, float lifeTime, RecipeData requiredRecipe, BottleData.BottleType requiredBottle)
     {
         this.orderID = orderID;
         this.orderImg = orderImg;
         this.lifeTime = lifeTime;
         state = OrderState.Pending;
-        this.recipe = recipe;
+        this.requiredRecipe = requiredRecipe;
         this.requiredBottle = requiredBottle;
     }
 }

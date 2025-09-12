@@ -49,10 +49,18 @@ public class DraggableItem : MonoBehaviour
         {
             if (hit.gameObject == gameObject) continue; // Skip the element itself
 
-            if (hit.TryGetComponent(out DropArea dropArea))
+            if (hit.TryGetComponent(out DropArea dropArea) && hit.TryGetComponent(out IngredientContainer ingredientContainer))
             {
-                dropArea.OnItemDrop(this);
-                return;
+                if (itemData.Type == ItemData.ItemType.Ingredient && ingredientContainer.IngredientList.Count < 3)
+                {
+                    dropArea.OnItemDrop(this);
+                    return;
+                }
+                else if(itemData.Type == ItemData.ItemType.Bottle)
+                {
+                    dropArea.OnItemDrop(this);
+                    return;
+                }
             }
         }
 

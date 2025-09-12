@@ -9,8 +9,6 @@ public class DropArea : MonoBehaviour
 
     public void OnItemDrop(DraggableItem item)
     {
-        Debug.Log("Se ha agregado: " + item.ItemData.ItemName);
-
         if (item.ItemData.Type == ItemData.ItemType.Ingredient)
         {
             item.GetComponentInParent<Respawner>().SubscribeToIngredientDroppedEvent(this);

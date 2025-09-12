@@ -8,5 +8,5 @@ public class BottleData : ItemData
     [SerializeField] private BottleType bottleID;
 
     // === Properties ===
-    public BottleType IngredientID => bottleID;
+    public BottleType BottleID => bottleID;
 }

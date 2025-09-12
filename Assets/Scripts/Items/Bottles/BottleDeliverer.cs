@@ -9,7 +9,10 @@ public class BottleDeliverer : MonoBehaviour
     // === Bottle repositioning ===
     [SerializeField] private Vector2 tablePosition;
     private GameObject bottle;
-    
+
+    // === Events ===
+    public event Action<GameObject> BottleDelivered;
+
     // === Event handler ===
     private Action<IngredientContainer> onBottleDroppedHandler;
 
@@ -33,7 +36,7 @@ public class BottleDeliverer : MonoBehaviour
         dropAreaScript.BottleDropped += onBottleDroppedHandler;
     }
 
-    public void UnsubscribeToBottleDropped()
+    public void UnsubscribeToBottleDroppedEvent()
     {
         if (dropAreaScript != null && onBottleDroppedHandler != null)
         {
@@ -46,6 +49,8 @@ public class BottleDeliverer : MonoBehaviour
     private void DeliverOrder()
     {
         bottle.transform.position = tablePosition;
-        UnsubscribeToBottleDropped();
+        BottleDelivered?.Invoke(bottle);
+
+        UnsubscribeToBottleDroppedEvent();
     }
 }
