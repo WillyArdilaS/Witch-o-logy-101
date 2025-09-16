@@ -5,7 +5,7 @@ public class DropArea : MonoBehaviour
 {
     // === Events ===
     public event Action<DraggableItem> IngredientDropped;
-    public event Action<IngredientContainer> BottleDropped;
+    public event Action<GameObject> BottleDropped;
 
     public void OnItemDrop(DraggableItem item)
     {
@@ -18,7 +18,7 @@ public class DropArea : MonoBehaviour
         {
             item.GetComponentInParent<BottleFiller>().SubscribeToBottleDroppedEvent(this);
             item.GetComponentInParent<BottleDeliverer>().SubscribeToBottleDroppedEvent(this);
-            BottleDropped?.Invoke(gameObject.GetComponent<IngredientContainer>());
+            BottleDropped?.Invoke(gameObject);
         }
     }
 }

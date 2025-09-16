@@ -5,6 +5,7 @@ public class BottleFiller : MonoBehaviour
 {
     // === Scripts ===
     private DropArea dropAreaScript;
+    private BottleColorChanger bottleColorChangerScript;
     private OrderChecker orderCheckerScript;
 
     // === Ingredients ===
@@ -12,6 +13,11 @@ public class BottleFiller : MonoBehaviour
 
     // === Properties ===
     public List<IngredientData> IngredientListInBottle => ingredientListInBottle;
+
+    void Awake()
+    {
+        bottleColorChangerScript = GetComponentInChildren<BottleColorChanger>();
+    }
 
     // === Event subscriptions methods ===
     public void SubscribeToBottleDroppedEvent(DropArea dropArea)
@@ -40,19 +46,23 @@ public class BottleFiller : MonoBehaviour
     }
 
     // === List management methods ===
-    private void FillBottle(IngredientContainer container)
+    private void FillBottle(GameObject cauldron)
     {
-        foreach (var ingredient in container.IngredientList)
+        IngredientContainer ingredientContainer = cauldron.GetComponent<IngredientContainer>();
+
+        foreach (var ingredient in ingredientContainer.IngredientList)
         {
             ingredientListInBottle.Add(ingredient);
         }
 
-        container.EmptyContainer();
+        bottleColorChangerScript.ChangeColor(cauldron);
+        ingredientContainer.EmptyContainer();
     }
 
     private void EmptyBottle()
     {
         ingredientListInBottle.Clear();
+        bottleColorChangerScript.ResetColor();
         UnsubscribeToBottleDroppedEvent();
     }
 }

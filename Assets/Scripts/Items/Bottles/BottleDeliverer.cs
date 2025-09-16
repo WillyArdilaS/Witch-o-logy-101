@@ -14,7 +14,7 @@ public class BottleDeliverer : MonoBehaviour
     public event Action<GameObject> BottleDelivered;
 
     // === Event handler ===
-    private Action<IngredientContainer> onBottleDroppedHandler;
+    private Action<GameObject> onBottleDroppedHandler;
 
     void Awake()
     {

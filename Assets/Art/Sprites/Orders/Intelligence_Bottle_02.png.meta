@@ -129,10 +129,10 @@ TextureImporter:
       name: Intelligence_Bottle_02_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 85
-        height: 120
+        x: 0
+        y: 0
+        width: 80
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

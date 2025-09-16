@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class OrderCreator : MonoBehaviour
@@ -24,7 +25,7 @@ public class OrderCreator : MonoBehaviour
         randomBottleType = GetRandomBottleType();
 
         OrderData newOrder = new(GenerateOrderID(), FindOrderImg(), lifeTimeDefault, randomRecipe, randomBottleType);
-        StartLifeTimer(newOrder);
+        StartOrderLifeTimer(newOrder);
         return newOrder;
     }
 
@@ -42,17 +43,10 @@ public class OrderCreator : MonoBehaviour
 
     private Sprite FindOrderImg()
     {
-        foreach (var image in orderImages)
-        {
-            if (image.name != $"{randomRecipe.RecipeID}_{randomBottleType}") continue;
-
-            return image;
-        }
-
-        return null;
+        return orderImages.FirstOrDefault(img => img.name == $"{randomRecipe.RecipeID}_{randomBottleType}");
     }
 
-    public void StartLifeTimer(OrderData order)
+    public void StartOrderLifeTimer(OrderData order)
     {
         if (lifeTimerRoutine != null) StopCoroutine(order.LifeTimer());
         lifeTimerRoutine = StartCoroutine(order.LifeTimer());

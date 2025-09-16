@@ -12,9 +12,6 @@ public class OrderChecker : MonoBehaviour
     // === Bottles ===
     [SerializeField] private BottleDeliverer[] bottleDeliverers;
 
-    // === ===
-    private OrderData currentOrder;
-
     // === Events ===
     public event Action OrderChecked;
 
@@ -57,7 +54,6 @@ public class OrderChecker : MonoBehaviour
                 if (CheckIngredients(deliveredBottle, order))
                 {
                     Debug.Log("La orden es correcta");
-                    currentOrder = order;
                     order.State = OrderData.OrderState.Delivered;
 
                     StartCoroutine(InvokeOrderChecked(1f, bottleParent));
