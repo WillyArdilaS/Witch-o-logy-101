@@ -5,7 +5,7 @@ using UnityEngine;
 public class OrderCreator : MonoBehaviour
 {
     // === Order data ===
-    [SerializeField] private RecipeBook recipeBook;
+    [SerializeField] private RecipeBookData recipeBook;
     [SerializeField] private Sprite[] orderImages;
 
     // === Order creation ===

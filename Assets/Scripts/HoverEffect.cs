@@ -7,7 +7,7 @@ public class HoverEffect : MonoBehaviour
     [SerializeField] private Color hoverColor;
     private SpriteRenderer spriteRend;
 
-    protected virtual void Awake()
+    void Awake()
     {
         spriteRend = GetComponent<SpriteRenderer>();
     }

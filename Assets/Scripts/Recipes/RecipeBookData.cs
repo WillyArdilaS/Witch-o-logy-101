@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Recibe Book", menuName = "ScriptableObjects/RecipeBook")]
-public class RecipeBook : ScriptableObject
+public class RecipeBookData : ScriptableObject
 {
     // === Data fields ===
     [SerializeField] private List<RecipeData> recipeList = new();
