@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
 public class DraggableItem : MonoBehaviour
@@ -10,8 +11,9 @@ public class DraggableItem : MonoBehaviour
     private Rigidbody2D rb2D;    
 
     // === Order in layer ===
-    [SerializeField] private int layerNumber;
+    [SerializeField] private int newLayerNumber;
     private SpriteRenderer spriteRend;
+    private int originalLayerNumber;
 
     // === Properties ===
     public ItemData ItemData => itemData;
@@ -21,28 +23,35 @@ public class DraggableItem : MonoBehaviour
         itemData.StartPosition = transform.position;
         rb2D = GetComponent<Rigidbody2D>();
         spriteRend = GetComponent<SpriteRenderer>();
+        originalLayerNumber = spriteRend.sortingOrder;
     }
 
     public void ResetItem()
     {
-        spriteRend.sortingOrder = layerNumber; // Reset order in layer
+        spriteRend.sortingOrder = originalLayerNumber; // Reset order in layer
         rb2D.bodyType = RigidbodyType2D.Static;
         gameObject.SetActive(true);
     }
 
     void OnMouseDown()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+
         rb2D.bodyType = RigidbodyType2D.Static;
-        spriteRend.sortingOrder = 5;
+        spriteRend.sortingOrder = newLayerNumber;
     }    
 
     void OnMouseDrag()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+
         transform.position = GetMousePositionInWorld();
     }
 
     void OnMouseUp()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        
         Collider2D[] hits = Physics2D.OverlapPointAll(GetMousePositionInWorld());
 
         foreach (Collider2D hit in hits)

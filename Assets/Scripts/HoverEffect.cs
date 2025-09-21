@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class HoverEffect : MonoBehaviour
@@ -14,11 +15,15 @@ public class HoverEffect : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+
         spriteRend.color = hoverColor;
     }
 
     void OnMouseExit()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+
         spriteRend.color = Color.white;
     }
 }
