@@ -6,7 +6,9 @@ public class IngredientData : ItemData
     // === Extra data fields ===
     public enum IngredientType { Bones, Essence_01, Essence_02, Essence_03, Eyes, Flowers, Radish, Rosemary, Salt, Wings }
     [SerializeField] private IngredientType ingredientID;
+    [SerializeField] private Sprite labelImage;
 
     // === Properties ===
     public IngredientType IngredientID => ingredientID;
+    public Sprite LabelImage => labelImage;
 }

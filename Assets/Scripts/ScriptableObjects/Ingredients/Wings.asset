@@ -17,3 +17,4 @@ MonoBehaviour:
   startPosition: {x: -1.6440002, y: 0.486}
   respawnTime: 0.5
   ingredientID: 9
+  labelImage: {fileID: 21300000, guid: f3c1399c9ecd32d4dbe835755bafa752, type: 3}
