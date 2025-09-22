@@ -33,7 +33,7 @@ public class OrderData
     }
 
     // === Order expiration method ===
-    public IEnumerator LifeTimer()
+    public IEnumerator StartLifeTimer()
     {
         while (lifeTime > 0 && state == OrderState.Pending)
         {

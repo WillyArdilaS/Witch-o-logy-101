@@ -48,7 +48,7 @@ public class OrderCreator : MonoBehaviour
 
     public void StartOrderLifeTimer(OrderData order)
     {
-        if (lifeTimerRoutine != null) StopCoroutine(order.LifeTimer());
-        lifeTimerRoutine = StartCoroutine(order.LifeTimer());
+        if (lifeTimerRoutine != null) StopCoroutine(order.StartLifeTimer());
+        lifeTimerRoutine = StartCoroutine(order.StartLifeTimer());
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CauldronUI : MonoBehaviour
 {
     // === UI containers ===
-    [SerializeField] private List<GameObject> labelSpaces;
+    [SerializeField] private List<GameObject> labelContainers;
 
     // === Instantiation ===
     [SerializeField] private GameObject labelPrefab;
@@ -14,11 +14,11 @@ public class CauldronUI : MonoBehaviour
 
     public void ShowIngredientLabelUI(IngredientData ingredient)
     {
-        foreach (var space in labelSpaces)
+        foreach (var container in labelContainers)
         {
-            if (space.transform.childCount != 0) continue;
+            if (container.transform.childCount != 0) continue;
 
-            labelUI = Instantiate(labelPrefab, space.transform);
+            labelUI = Instantiate(labelPrefab, container.transform);
             labelUI.GetComponent<Image>().sprite = ingredient.LabelImage;
             labeUIList.Add(labelUI);
             return;
