@@ -35,7 +35,7 @@ public class DraggableItem : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (GameManager.instance.State != GameManager.GameState.Playing) return;
 
         rb2D.bodyType = RigidbodyType2D.Static;
         spriteRend.sortingOrder = newLayerNumber;
@@ -43,14 +43,14 @@ public class DraggableItem : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (GameManager.instance.State != GameManager.GameState.Playing) return;
 
         transform.position = GetMousePositionInWorld();
     }
 
     void OnMouseUp()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (GameManager.instance.State != GameManager.GameState.Playing) return;
         
         Collider2D[] hits = Physics2D.OverlapPointAll(GetMousePositionInWorld());
 

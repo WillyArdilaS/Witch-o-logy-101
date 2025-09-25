@@ -15,14 +15,14 @@ public class HoverEffect : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (GameManager.instance.State != GameManager.GameState.Playing) return;
 
         spriteRend.color = hoverColor;
     }
 
     void OnMouseExit()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (GameManager.instance.State != GameManager.GameState.Playing) return;
 
         spriteRend.color = Color.white;
     }
