@@ -1,12 +1,13 @@
 using System;
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class OrderCreator : MonoBehaviour
 {
     // === Order data ===
     [SerializeField] private RecipeBookData recipeBook;
-    [SerializeField] private Sprite[] orderImages;
+    [SerializeField] private AnimatorController[] orderAnimControllers;
 
     // === Order creation ===
     [SerializeField] private float lifeTimeDefault;
@@ -24,7 +25,7 @@ public class OrderCreator : MonoBehaviour
         randomRecipe = recipeBook.GetRandomRecipe();
         randomBottleType = GetRandomBottleType();
 
-        OrderData newOrder = new(GenerateOrderID(), FindOrderImg(), lifeTimeDefault, randomRecipe, randomBottleType);
+        OrderData newOrder = new(GenerateOrderID(), FindOrderAnimController(), lifeTimeDefault, randomRecipe, randomBottleType);
         StartOrderLifeTimer(newOrder);
         return newOrder;
     }
@@ -41,9 +42,9 @@ public class OrderCreator : MonoBehaviour
         return $"ORD{totalOrders}_{randomRecipe.RecipeID}_{randomBottleType}";
     }
 
-    private Sprite FindOrderImg()
+    private AnimatorController FindOrderAnimController()
     {
-        return orderImages.FirstOrDefault(img => img.name == $"{randomRecipe.RecipeID}_{randomBottleType}");
+        return orderAnimControllers.FirstOrDefault(controller => controller.name == $"{randomRecipe.RecipeID}_{randomBottleType}");
     }
 
     public void StartOrderLifeTimer(OrderData order)

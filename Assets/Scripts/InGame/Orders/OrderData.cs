@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [System.Serializable]
@@ -7,7 +8,7 @@ public class OrderData
     // === Order data ===
     public enum OrderState { Pending, Delivered, Failed }
     [SerializeField] private string orderID;
-    [SerializeField] private Sprite orderImg;
+    [SerializeField] private AnimatorController animController;
     [SerializeField] private float lifeTime;
     [SerializeField] private OrderState state;
     [SerializeField] private RecipeData requiredRecipe;
@@ -15,17 +16,17 @@ public class OrderData
 
     // === Properties ===
     public string OrderID => orderID;
-    public Sprite OrderImg => orderImg;
+    public AnimatorController AnimController => animController;
     public float LifeTime => lifeTime;
     public OrderState State { get => state; set => state = value; }
     public RecipeData RequiredRecipe => requiredRecipe;
     public BottleData.BottleType RequiredBottle => requiredBottle;
 
     // === Constructor ===
-    public OrderData(string orderID, Sprite orderImg, float lifeTime, RecipeData requiredRecipe, BottleData.BottleType requiredBottle)
+    public OrderData(string orderID, AnimatorController animController, float lifeTime, RecipeData requiredRecipe, BottleData.BottleType requiredBottle)
     {
         this.orderID = orderID;
-        this.orderImg = orderImg;
+        this.animController = animController;
         this.lifeTime = lifeTime;
         state = OrderState.Pending;
         this.requiredRecipe = requiredRecipe;
@@ -44,7 +45,6 @@ public class OrderData
         if (lifeTime == 0)
         {
             state = OrderState.Failed;
-            Debug.Log($"La orden {OrderID} no fue entregada");
         }
     }
 }

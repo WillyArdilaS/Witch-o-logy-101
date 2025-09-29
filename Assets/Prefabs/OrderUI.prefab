@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6441427726771078248}
   - component: {fileID: 6663306399226648343}
   - component: {fileID: 3929212072102229683}
+  - component: {fileID: 7249037709822928255}
   m_Layer: 5
   m_Name: OrderUI
   m_TagString: Untagged
@@ -35,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.5, y: 6}
-  m_SizeDelta: {x: 48, y: 66}
+  m_SizeDelta: {x: 56, y: 61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6663306399226648343
 CanvasRenderer:
@@ -75,3 +76,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7249037709822928255
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607479338474950618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6df2a606b171e6e49a2c7c4f6244de83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

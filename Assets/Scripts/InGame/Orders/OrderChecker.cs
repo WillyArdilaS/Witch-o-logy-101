@@ -53,15 +53,12 @@ public class OrderChecker : MonoBehaviour
             {
                 if (CheckIngredients(deliveredBottle, order))
                 {
-                    Debug.Log("La orden es correcta");
                     order.State = OrderData.OrderState.Delivered;
-
                     StartCoroutine(InvokeOrderChecked(1f, bottleParent));
                     return;
                 }
             }
 
-            Debug.Log("Ninguna orden coincide con esa botella + ingredientes");
             StartCoroutine(InvokeOrderChecked(1f, bottleParent));
         }
     }

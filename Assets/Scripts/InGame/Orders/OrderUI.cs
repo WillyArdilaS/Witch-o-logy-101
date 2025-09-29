@@ -1,89 +1,88 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
-[RequireComponent(typeof(OrderManager))]
+[RequireComponent(typeof(OrderContainerUI))]
 public class OrderUI : MonoBehaviour
 {
     // === Scripts ===
     private OrderManager orderManagerScript;
-
-    // === UI containers ===
-    [SerializeField] private List<GameObject> orderContainers;
-    [SerializeField] private Sprite[] containerImages;
+    private OrderContainerUI orderContainerUIScript;
 
     // === Instantiation ===
     [SerializeField] private GameObject orderPrefab;
     private Dictionary<string, GameObject> orderUIDict = new();
     private GameObject orderUI;
 
+    // === Coroutines ===
+    private Coroutine deleteOrderRoutine;
+
     // === Properties ===
-    public List<GameObject> OrderContainers => orderContainers;
+    public Dictionary<string, GameObject> OrderUIDict => orderUIDict;
 
     void Awake()
     {
         orderManagerScript = GetComponent<OrderManager>();
+        orderContainerUIScript = GetComponent<OrderContainerUI>();
 
-        orderManagerScript.OrderAdded += ShowOrderUI;
-        orderManagerScript.OrderDelivered += DeleteOrderUI;
-        orderManagerScript.OrderFailed += DeleteOrderUI;
+        if (orderManagerScript != null)
+        {
+            orderManagerScript.OrderAdded += ShowOrderUI;
+            orderManagerScript.OrderDelivered += PlayFadeOutOrderAnim;
+            orderManagerScript.OrderFailed += PlayFadeOutOrderAnim;
+        }
     }
 
-    // === Order UI methods ===
     private void ShowOrderUI(OrderData lastOrder)
     {
-        foreach (var container in orderContainers)
+        foreach (var container in orderContainerUIScript.OrderContainers)
         {
             if (container.transform.childCount != 0) continue;
 
             orderUI = Instantiate(orderPrefab, container.transform);
-            orderUI.GetComponent<Image>().sprite = lastOrder.OrderImg;
+            orderUI.GetComponent<Animator>().runtimeAnimatorController = lastOrder.AnimController;
             orderUIDict[lastOrder.OrderID] = orderUI;
             return;
         }
     }
 
-    private void DeleteOrderUI(OrderData orderToDelete)
+    private void PlayFadeOutOrderAnim(OrderData orderToHide)
     {
+        if (orderUIDict.TryGetValue(orderToHide.OrderID, out GameObject orderUI))
+        {
+            Animator orderUIAnimator = orderUI.GetComponent<Animator>();
+            float fadeOutAnimDuration;
+
+            orderUIAnimator.SetBool("b_isFadingOut", true);
+            fadeOutAnimDuration = orderUIAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length / Math.Abs(orderUIAnimator.speed);
+
+            // Wait until the animation finishes to delete the order
+            if (deleteOrderRoutine != null) StopCoroutine(deleteOrderRoutine);
+            deleteOrderRoutine = StartCoroutine(DeleteOrderUI(fadeOutAnimDuration, orderToHide));
+        }
+    }
+
+    private IEnumerator DeleteOrderUI(float delay, OrderData orderToDelete)
+    {
+        yield return new WaitForSeconds(delay);
+
         if (orderUIDict.TryGetValue(orderToDelete.OrderID, out GameObject orderUI))
         {
+            GameObject orderContainer = orderUI.transform.parent.gameObject;
+
             Destroy(orderUI);
             orderUIDict.Remove(orderToDelete.OrderID);
 
             // Change the container image based on the order status
-            GameObject orderContainer = orderUI.transform.parent.gameObject;
-
             if (orderToDelete.State == OrderData.OrderState.Delivered)
             {
-                ResetContainerColor(orderContainer);
+                orderContainerUIScript.ResetContainerColor(orderContainer);
             }
             else if (orderToDelete.State == OrderData.OrderState.Failed)
             {
-                DeleteContainer(orderContainer);
+                orderContainerUIScript.PlayBurningScrollAnim(orderContainer);
             }
         }
-    }
-
-    // === Order container methods ===
-    public void ChangeContainerColor(OrderData currentOrder)
-    {
-        if (orderUIDict.TryGetValue(currentOrder.OrderID, out GameObject orderUI))
-        {
-            GameObject orderContainer = orderUI.transform.parent.gameObject;
-            orderContainer.GetComponent<Image>().sprite = containerImages.FirstOrDefault(img => img.name == "WarningScroll");
-        }
-    }
-
-    private void ResetContainerColor(GameObject orderContainer)
-    {
-        orderContainer.GetComponent<Image>().sprite = containerImages.FirstOrDefault(img => img.name == "NormalScroll");
-    }
-
-    private void DeleteContainer(GameObject orderContainer)
-    {
-        orderContainer.GetComponent<Image>().sprite = containerImages.FirstOrDefault(img => img.name == "BurntScroll");
-
-        orderContainers.Remove(orderContainer);
     }
 }
