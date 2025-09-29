@@ -81,7 +81,7 @@ public class OrderUI : MonoBehaviour
             }
             else if (orderToDelete.State == OrderData.OrderState.Failed)
             {
-                orderContainerUIScript.PlayBurningScrollAnim(orderContainer);
+                orderContainerUIScript.BurnContainer(orderContainer);
             }
         }
     }
