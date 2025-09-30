@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(OrderContainerUI))]
 public class OrderUI : MonoBehaviour
 {
     // === Scripts ===
     private OrderManager orderManagerScript;
-    private OrderContainerUI orderContainerUIScript;
+    private OrderContainerManager orderContainerManager;
 
     // === Instantiation ===
     [SerializeField] private GameObject orderPrefab;
@@ -24,7 +23,7 @@ public class OrderUI : MonoBehaviour
     void Awake()
     {
         orderManagerScript = GetComponent<OrderManager>();
-        orderContainerUIScript = GetComponent<OrderContainerUI>();
+        orderContainerManager = GetComponent<OrderContainerManager>();
 
         if (orderManagerScript != null)
         {
@@ -36,7 +35,7 @@ public class OrderUI : MonoBehaviour
 
     private void ShowOrderUI(OrderData lastOrder)
     {
-        foreach (var container in orderContainerUIScript.OrderContainers)
+        foreach (var container in orderContainerManager.OrderContainers)
         {
             if (container.transform.childCount != 0) continue;
 
@@ -77,11 +76,11 @@ public class OrderUI : MonoBehaviour
             // Change the container image based on the order status
             if (orderToDelete.State == OrderData.OrderState.Delivered)
             {
-                orderContainerUIScript.ResetContainerColor(orderContainer);
+                orderContainerManager.ResetContainerColor(orderContainer);
             }
             else if (orderToDelete.State == OrderData.OrderState.Failed)
             {
-                orderContainerUIScript.BurnContainer(orderContainer);
+                orderContainerManager.BurnContainer(orderContainer);
             }
         }
     }

@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     // === Scripts ===
     private OrderManager orderManagerScript;
-    private OrderContainerUI orderContainerUIScript;
+    private OrderContainerManager orderContainerManagerScript;
 
     // === Singleton ===
     public static GameManager instance;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         orderManagerScript = GetComponentInChildren<OrderManager>();
-        orderContainerUIScript = GetComponentInChildren<OrderContainerUI>();
+        orderContainerManagerScript = GetComponentInChildren<OrderContainerManager>();
 
         // Singleton
         if (instance == null)
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             orderManagerScript.CanCreateNewOrder = CheckOrderCreationAllowed();
         }
 
-        if (orderContainerUIScript.OrderContainers.Count == 0)
+        if (orderContainerManagerScript.OrderContainers.Count == 0)
         {
             LoadGameOver(0);
         }
@@ -73,12 +73,12 @@ public class GameManager : MonoBehaviour
             gameTimer++;
         }
 
-        LoadGameOver(orderContainerUIScript.OrderContainers.Count);
+        LoadGameOver(orderContainerManagerScript.OrderContainers.Count);
     }
 
     private bool CheckOrderCreationAllowed()
     {
-        if (orderManagerScript.ActiveOrders.Count >= orderContainerUIScript.OrderContainers.Count) return false;
+        if (orderManagerScript.ActiveOrders.Count >= orderContainerManagerScript.OrderContainers.Count) return false;
 
         return true;
     }

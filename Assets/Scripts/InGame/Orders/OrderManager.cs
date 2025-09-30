@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(OrderCreator), typeof(OrderContainerUI))]
+[RequireComponent(typeof(OrderCreator), typeof(OrderContainerManager))]
 public class OrderManager : MonoBehaviour
 {
     // === Scripts ===
     private OrderCreator orderCreatorScript;
     private OrderUI orderUIScript;
-    private OrderContainerUI orderContainerUIScript;
+    private OrderContainerManager orderContainerManager;
 
     // === Order creation ===
     [SerializeField] private float orderCooldown;
@@ -35,7 +35,7 @@ public class OrderManager : MonoBehaviour
     {
         orderCreatorScript = GetComponent<OrderCreator>();
         orderUIScript = GetComponent<OrderUI>();
-        orderContainerUIScript = GetComponent<OrderContainerUI>();
+        orderContainerManager = GetComponent<OrderContainerManager>();
     }
 
     void Update()
@@ -63,14 +63,14 @@ public class OrderManager : MonoBehaviour
         {
             if (order.LifeTime <= orderWarningTime)
             {
-                orderContainerUIScript.ChangeContainerColor(order, orderUIScript.OrderUIDict);
+                orderContainerManager.ChangeContainerColor(order, orderUIScript.OrderUIDict);
             }
         }
     }
 
     private IEnumerator CreateNewOrder()
     {
-        while (activeOrders.Count < orderContainerUIScript.OrderContainers.Count)
+        while (activeOrders.Count < orderContainerManager.OrderContainers.Count)
         {
             yield return new WaitForSeconds(orderCooldown);
 

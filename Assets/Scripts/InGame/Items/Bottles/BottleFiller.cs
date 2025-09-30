@@ -5,7 +5,7 @@ public class BottleFiller : MonoBehaviour
 {
     // === Scripts ===
     private DropArea dropAreaScript;
-    private BottleColorChanger bottleColorChangerScript;
+    private BottleSpriteChanger bottleColorChangerScript;
     private OrderChecker orderCheckerScript;
 
     // === Ingredients ===
@@ -16,7 +16,7 @@ public class BottleFiller : MonoBehaviour
 
     void Awake()
     {
-        bottleColorChangerScript = GetComponentInChildren<BottleColorChanger>();
+        bottleColorChangerScript = GetComponentInChildren<BottleSpriteChanger>();
     }
 
     // === Event subscriptions methods ===
@@ -55,14 +55,14 @@ public class BottleFiller : MonoBehaviour
             ingredientListInBottle.Add(ingredient);
         }
 
-        bottleColorChangerScript.ChangeColor(cauldron);
+        bottleColorChangerScript.ChangeBottleSprite(cauldron);
         ingredientContainer.EmptyContainer();
     }
 
     private void EmptyBottle()
     {
         ingredientListInBottle.Clear();
-        bottleColorChangerScript.ResetColor();
+        bottleColorChangerScript.ResetBottleSprite();
         UnsubscribeToBottleDroppedEvent();
     }
 }

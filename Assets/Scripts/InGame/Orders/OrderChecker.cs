@@ -12,6 +12,9 @@ public class OrderChecker : MonoBehaviour
     // === Bottles ===
     [SerializeField] private BottleDeliverer[] bottleDeliverers;
 
+    // === State ===
+    private bool isOrderCorrect = false;
+
     // === Events ===
     public event Action OrderChecked;
 
@@ -51,15 +54,19 @@ public class OrderChecker : MonoBehaviour
 
             foreach (var order in candidateOrders)
             {
+                // An order matches the delivery
                 if (CheckIngredients(deliveredBottle, order))
                 {
+                    isOrderCorrect = true;
                     order.State = OrderData.OrderState.Delivered;
-                    StartCoroutine(InvokeOrderChecked(1f, bottleParent));
+                    StartCoroutine(InvokeOrderChecked(bottleParent));
                     return;
                 }
             }
 
-            StartCoroutine(InvokeOrderChecked(1f, bottleParent));
+            // No order matches the delivery
+            isOrderCorrect = false;
+            StartCoroutine(InvokeOrderChecked(bottleParent));
         }
     }
 
@@ -78,18 +85,19 @@ public class OrderChecker : MonoBehaviour
     }
 
     // === Activate respawn with delay method ===
-    private IEnumerator InvokeOrderChecked(float delay, Transform bottleParent)
+    private IEnumerator InvokeOrderChecked(Transform bottleParent)
     {
-        yield return new WaitForSeconds(delay);
+        BottleSpriteChanger bottleSpriteChanger = bottleParent.GetComponentInChildren<BottleSpriteChanger>();
+        bottleSpriteChanger.PlayValidateBottleAnim(isOrderCorrect);
+
+        yield return null; // Wait for the animator to change state
+
+        float validateBottleAnimDuration = bottleSpriteChanger.Animator.GetCurrentAnimatorClipInfo(0)[0].clip.length / Math.Abs(bottleSpriteChanger.Animator.speed);
+        yield return new WaitForSeconds(validateBottleAnimDuration); // Wait until the animation finishes to handle the OrderChecked event
 
         bottleParent.GetComponent<Respawner>().SubscribeToOrderCheckedEvent(this);
         bottleParent.GetComponent<BottleFiller>().SubscribeToOrderCheckedEvent(this);
+
         OrderChecked?.Invoke();
     }
-
-    // public void RespawnAfterAnimation()
-    // {
-    //     deliveredBottle.GetComponentInParent<Respawner>().SubscribeToOrderCheckedEvent(this);
-    //     OrderChecked?.Invoke();
-    // }
 }
