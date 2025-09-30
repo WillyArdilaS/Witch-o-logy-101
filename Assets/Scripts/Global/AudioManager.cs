@@ -39,12 +39,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private MusicList[] musicList;
     [HideInInspector] public enum MusicType { MainMenu, InGame }
 
-    // === Sfx ===
+    // === SFX ===
     [SerializeField] private SfxList[] sfxList;
     [HideInInspector] public enum SfxType { General, Item, Order, Scroll }
 
-    // === UI Sfx ===
+    // === UI SFX ===
     [SerializeField] private UISfxList[] uiSfxList;
+    [HideInInspector] public enum UISfxType { Button }
 
     // === Volumes ===
     [Header("Music Volumes")]
@@ -68,6 +69,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField, Range(0, 1)] private float buttonClickVol;
 
     // === Properties ===
+    public AudioSource MusicSource => musicSource;
     public float MainMenuSongVol => mainMenuSongVol;
     public float GameSongVol => gameSongVol;
     public float RecipeBookVol => recipeBookVol;
@@ -83,6 +85,7 @@ public class AudioManager : MonoBehaviour
     public float SuccessfulDayVol => successfulDayVol;
     public float ButtonClickVol => buttonClickVol;
 
+    // === Music methods ===
     public void PlayMusic(MusicType musicType, int musicIndex, float volume = 1)
     {
         AudioClip[] songs = musicList[(int)musicType].Songs;
@@ -94,6 +97,31 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+    }
+
+    public AudioClip GetMusicClip()
+    {
+        return musicSource.clip; 
+    }
+
+    // === SFX methods ===
+    public void PlaySFX(SfxType sfxType, int sfxIndex, float volume = 1)
+    {
+        AudioClip[] clips = sfxList[(int)sfxType].Sfx;
+        sfxSource.PlayOneShot(clips[sfxIndex], volume);
+    }
+
+    public void StopSFX()
+    {
+        sfxSource.Stop();
+    }
+
+    // === UI SFX methods ===
+
+    public void PlayUISFX(UISfxType uiSfxType, int uiSfxIndex, float volume = 1)
+    {
+        AudioClip[] clips = uiSfxList[(int)uiSfxType].UISfx;
+        uiSfxSource.PlayOneShot(clips[uiSfxIndex], volume);
     }
 
     // === Synchronization of list arrays with enums (only in the editor) ===
@@ -116,6 +144,15 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i < sfxList.Length; i++)
         {
             sfxList[i].name = sfxNames[i];
+        }
+
+        // For UI SFX
+        string[] uiSfxNames = Enum.GetNames(typeof(UISfxType)); // Get the names of all values in the SfxType enum
+        Array.Resize(ref uiSfxList, uiSfxNames.Length);
+
+        for (int i = 0; i < uiSfxList.Length; i++)
+        {
+            uiSfxList[i].name = uiSfxNames[i];
         }
     }
 #endif

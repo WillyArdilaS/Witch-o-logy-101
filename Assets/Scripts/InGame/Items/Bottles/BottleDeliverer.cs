@@ -48,6 +48,8 @@ public class BottleDeliverer : MonoBehaviour
     // === Delivery methods ===
     private void DeliverOrder()
     {
+        GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Order, 1, GlobalGameManager.instance.AudioManager.DeliverOrderVol);
+
         bottle.transform.position = tablePosition;
         BottleDelivered?.Invoke(bottle);
 

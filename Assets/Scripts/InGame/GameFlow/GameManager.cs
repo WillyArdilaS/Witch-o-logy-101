@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1;
+        
         orderManagerScript = GetComponentInChildren<OrderManager>();
         orderContainerManagerScript = GetComponentInChildren<OrderContainerManager>();
 

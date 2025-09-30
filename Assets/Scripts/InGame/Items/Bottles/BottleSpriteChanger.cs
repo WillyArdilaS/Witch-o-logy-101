@@ -58,16 +58,19 @@ public class BottleSpriteChanger : MonoBehaviour
         {
             if (isOrderCorrect)
             {
+                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Order, 0, GlobalGameManager.instance.AudioManager.CorrectOrderVol);
                 animator.SetTrigger("t_isCorrect");
             }
             else
             {
+                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Order, 3, GlobalGameManager.instance.AudioManager.WrongOrderVol);
                 bottleVFXAnimator.SetTrigger("t_isTransforming");
                 animator.SetTrigger("t_isWrong");
             }
         }
         else
         {
+            GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Order, 3, GlobalGameManager.instance.AudioManager.WrongOrderVol);
             animator.SetTrigger("t_isWrong");
         }
     }

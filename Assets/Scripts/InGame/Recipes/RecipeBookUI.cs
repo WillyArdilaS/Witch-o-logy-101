@@ -12,8 +12,11 @@ public class RecipeBookUI : MonoBehaviour
 
     private void ShowRecipeBookUI()
     {
+        GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.General, 0, GlobalGameManager.instance.AudioManager.RecipeBookVol);
+        
         recipeBookUI.SetActive(true);
         GameManager.instance.State = GameManager.GameState.ShowingRecipeBook;
+
     }
 
     public void HideRecipeBookUI()

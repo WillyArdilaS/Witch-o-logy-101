@@ -8469,7 +8469,7 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 3f9542f71ba93c5439f435ce5b753f6b, type: 2}
   - {fileID: 22100000, guid: 6bbafc04e25f82d43bc8c5e197d42528, type: 2}
   - {fileID: 22100000, guid: bb4923aa156b2fc4a93405510fcfc386, type: 2}
-  lifeTimeDefault: 30
+  lifeTimeDefault: 10
 --- !u!4 &2110234418
 Transform:
   m_ObjectHideFlags: 0

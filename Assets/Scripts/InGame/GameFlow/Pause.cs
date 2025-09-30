@@ -32,10 +32,13 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void ContinueGame() {
+    public void ContinueGame()
+    {
         GameManager.instance.State = previousState;
-        
+
         pauseUI.SetActive(false);
         Time.timeScale = 1;
+
+        GlobalGameManager.instance.AudioManager.PlayUISFX(AudioManager.UISfxType.Button, 0, GlobalGameManager.instance.AudioManager.ButtonClickVol);
     }
 }

@@ -14,6 +14,8 @@ public class GameOverSettings : MonoBehaviour
             starMenus[i] = transform.GetChild(i).gameObject;
         }
 
+        GlobalGameManager.instance.AudioManager.StopSFX();
+        GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.General, 1, GlobalGameManager.instance.AudioManager.SuccessfulDayVol);
         ShowMenu();
     }
 

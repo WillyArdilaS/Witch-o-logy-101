@@ -74,6 +74,7 @@ public class OrderManager : MonoBehaviour
         {
             yield return new WaitForSeconds(orderCooldown);
 
+            GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Order, 2, GlobalGameManager.instance.AudioManager.NewOrderVol);
             newOrder = orderCreatorScript.CreateOrder();
             activeOrders.Add(newOrder);
             OrderAdded?.Invoke(newOrder);

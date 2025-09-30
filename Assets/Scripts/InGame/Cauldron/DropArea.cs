@@ -11,6 +11,8 @@ public class DropArea : MonoBehaviour
     {
         if (item.ItemData.Type == ItemData.ItemType.Ingredient)
         {
+            GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 2, GlobalGameManager.instance.AudioManager.CauldronDropVol);
+            
             item.GetComponentInParent<Respawner>().SubscribeToIngredientDroppedEvent(this);
             IngredientDropped?.Invoke(item);
         }

@@ -24,6 +24,10 @@ public class OrderContainerManager : MonoBehaviour
 
     public void BurnContainer(GameObject orderContainer)
     {
-        if (orderContainer.TryGetComponent<OrderContainerUI>(out var containerUI)) containerUI.PlayBurningScrollAnim(orderContainers, orderContainer);
+        if (orderContainer.TryGetComponent<OrderContainerUI>(out var containerUI))
+        {
+            containerUI.PlayBurningSFX(orderContainers.Count);
+            containerUI.PlayBurningScrollAnim(orderContainers, orderContainer);
+        } 
     }
 }

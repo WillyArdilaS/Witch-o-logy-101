@@ -32,6 +32,18 @@ public class OrderContainerUI : MonoBehaviour
         deleteContainerRoutine = StartCoroutine(DeleteContainer(orderContainers, orderContainer));
     }
 
+    public void PlayBurningSFX(int orderContainers)
+    {
+        if (orderContainers > 1)
+        {
+            GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Scroll, 0, GlobalGameManager.instance.AudioManager.AnyScrollBurntVol);
+        }
+        else
+        {
+           GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Scroll, 1, GlobalGameManager.instance.AudioManager.LastScrollBurntVol); 
+        }
+    }
+
     private IEnumerator DeleteContainer(List<GameObject> orderContainers, GameObject orderContainer)
     {
         yield return null; // Wait for the animator to change state

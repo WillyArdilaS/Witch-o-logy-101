@@ -446,8 +446,8 @@ MonoBehaviour:
   - name: Item
     sfx:
     - {fileID: 8300000, guid: d9cda8dd98179cd459f9b2af9fe1b71c, type: 3}
-    - {fileID: 8300000, guid: d9f8bdc941dad204cac5db826038ea70, type: 3}
     - {fileID: 8300000, guid: 968eaec895e25be419331646b37943a4, type: 3}
+    - {fileID: 8300000, guid: d9f8bdc941dad204cac5db826038ea70, type: 3}
   - name: Order
     sfx:
     - {fileID: 8300000, guid: fcbef906a7a3c4e46aa122fc6b44acf1, type: 3}
@@ -459,20 +459,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7b231461cc16b6d4eb49b8c57393206e, type: 3}
     - {fileID: 8300000, guid: 3da9840ceb7cbac4ebc9be60a2c13558, type: 3}
   uiSfxList:
-  - name: 
+  - name: Button
     uiSfx:
     - {fileID: 8300000, guid: 78652ebd28125cf4ab58d9fd099e2e63, type: 3}
   mainMenuSongVol: 1
-  gameSongVol: 0.3
-  recipeBookVol: 0
-  bottleFallVol: 0
-  ingredientFallVol: 0
-  cauldronDropVol: 0
-  newOrderVol: 0
-  deliverOrderVol: 0
-  correctOrderVol: 0
-  wrongOrderVol: 0
-  anyScrollBurntVol: 0
-  lastScrollBurntVol: 0
-  successfulDayVol: 0
-  buttonClickVol: 0
+  gameSongVol: 0.15
+  recipeBookVol: 1
+  bottleFallVol: 1
+  ingredientFallVol: 1
+  cauldronDropVol: 1
+  newOrderVol: 1
+  deliverOrderVol: 1
+  correctOrderVol: 1
+  wrongOrderVol: 1
+  anyScrollBurntVol: 1
+  lastScrollBurntVol: 1
+  successfulDayVol: 1
+  buttonClickVol: 0.5
