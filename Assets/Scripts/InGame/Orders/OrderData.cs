@@ -8,7 +8,7 @@ public class OrderData
     // === Order data ===
     public enum OrderState { Pending, Delivered, Failed }
     [SerializeField] private string orderID;
-    [SerializeField] private AnimatorController animController;
+    [SerializeField] private AnimatorOverrideController animController;
     [SerializeField] private float lifeTime;
     [SerializeField] private OrderState state;
     [SerializeField] private RecipeData requiredRecipe;
@@ -16,14 +16,14 @@ public class OrderData
 
     // === Properties ===
     public string OrderID => orderID;
-    public AnimatorController AnimController => animController;
+    public AnimatorOverrideController AnimController => animController;
     public float LifeTime => lifeTime;
     public OrderState State { get => state; set => state = value; }
     public RecipeData RequiredRecipe => requiredRecipe;
     public BottleData.BottleType RequiredBottle => requiredBottle;
 
     // === Constructor ===
-    public OrderData(string orderID, AnimatorController animController, float lifeTime, RecipeData requiredRecipe, BottleData.BottleType requiredBottle)
+    public OrderData(string orderID, AnimatorOverrideController animController, float lifeTime, RecipeData requiredRecipe, BottleData.BottleType requiredBottle)
     {
         this.orderID = orderID;
         this.animController = animController;

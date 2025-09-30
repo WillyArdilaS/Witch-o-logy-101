@@ -7,7 +7,7 @@ public class OrderCreator : MonoBehaviour
 {
     // === Order data ===
     [SerializeField] private RecipeBookData recipeBook;
-    [SerializeField] private AnimatorController[] orderAnimControllers;
+    [SerializeField] private AnimatorOverrideController[] orderAnimOverrides;
 
     // === Order creation ===
     [SerializeField] private float lifeTimeDefault;
@@ -42,9 +42,9 @@ public class OrderCreator : MonoBehaviour
         return $"ORD{totalOrders}_{randomRecipe.RecipeID}_{randomBottleType}";
     }
 
-    private AnimatorController FindOrderAnimController()
+    private AnimatorOverrideController FindOrderAnimController()
     {
-        return orderAnimControllers.FirstOrDefault(controller => controller.name == $"{randomRecipe.RecipeID}_{randomBottleType}");
+        return orderAnimOverrides.FirstOrDefault(controller => controller.name == $"{randomRecipe.RecipeID}_{randomBottleType}");
     }
 
     public void StartOrderLifeTimer(OrderData order)
