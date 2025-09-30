@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [RequireComponent(typeof(DraggableItem), typeof(SpriteRenderer), typeof(Animator))]
@@ -13,9 +14,10 @@ public class BottleSpriteChanger : MonoBehaviour
 
     // === Animations ===
     [SerializeField] private AnimatorOverrideController[] bottleAnimOverrides;
-    private AnimatorOverrideController currentAnimController;
     private Animator animator;
     private Animator bottleVFXAnimator;
+    private RuntimeAnimatorController baseAnimController;
+    private AnimatorOverrideController currentAnimController;
 
     // === Properties ===
     public Animator Animator => animator;
@@ -26,6 +28,8 @@ public class BottleSpriteChanger : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         bottleVFXAnimator = transform.GetChild(0).GetComponent<Animator>();
+
+        baseAnimController = animator.runtimeAnimatorController;
     }
 
     public void ChangeBottleSprite(GameObject cauldron)
@@ -71,7 +75,7 @@ public class BottleSpriteChanger : MonoBehaviour
     public void ResetBottleSprite()
     {
         currentAnimController = null;
-        animator.runtimeAnimatorController = null;
+        animator.runtimeAnimatorController = baseAnimController;
         spriteRenderer.sprite = emptyBottleImg;
     }
 
