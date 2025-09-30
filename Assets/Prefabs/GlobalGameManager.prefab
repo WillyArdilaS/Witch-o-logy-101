@@ -463,7 +463,7 @@ MonoBehaviour:
     uiSfx:
     - {fileID: 8300000, guid: 78652ebd28125cf4ab58d9fd099e2e63, type: 3}
   mainMenuSongVol: 1
-  gameSongVol: 0.15
+  gameSongVol: 0.25
   recipeBookVol: 1
   bottleFallVol: 1
   ingredientFallVol: 1

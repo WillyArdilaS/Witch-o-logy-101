@@ -12,11 +12,14 @@ public class OrderManager : MonoBehaviour
     private OrderContainerManager orderContainerManager;
 
     // === Order creation ===
+    [SerializeField] private float startCreationDelay;
     [SerializeField] private float orderCooldown;
     [SerializeField] private float orderWarningTime;
     [SerializeField] private List<OrderData> activeOrders = new();
     private OrderData newOrder;
     private bool canCreateNewOrder = true;
+    private bool isFirstOrder = true;
+
 
     // === Coroutines ===
     private Coroutine createOrderRoutine;
@@ -29,6 +32,7 @@ public class OrderManager : MonoBehaviour
     // === Properties ===
     public List<OrderData> ActiveOrders => activeOrders;
     public float OrderCooldown { get => orderCooldown; set => orderCooldown = value; }
+    public float OrderWarningTime { get => orderWarningTime; set => orderWarningTime = value; }
     public bool CanCreateNewOrder { get => canCreateNewOrder; set => canCreateNewOrder = value; }
 
     void Awake()
@@ -72,9 +76,19 @@ public class OrderManager : MonoBehaviour
     {
         while (activeOrders.Count < orderContainerManager.OrderContainers.Count)
         {
-            yield return new WaitForSeconds(orderCooldown);
+            // The first order has its own appearance cooldown
+            if (isFirstOrder == true)
+            {
+                isFirstOrder = false;
+                yield return new WaitForSeconds(startCreationDelay);
+            }
+            else
+            {
+                yield return new WaitForSeconds(orderCooldown);
+            }
 
             GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Order, 2, GlobalGameManager.instance.AudioManager.NewOrderVol);
+
             newOrder = orderCreatorScript.CreateOrder();
             activeOrders.Add(newOrder);
             OrderAdded?.Invoke(newOrder);

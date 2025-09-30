@@ -18,6 +18,10 @@ public class OrderCreator : MonoBehaviour
     // === Coroutines ===
     private Coroutine lifeTimerRoutine;
 
+    // === Properties ===
+    public RecipeBookData RecipeBook { get => recipeBook; set => recipeBook = value; }
+    public float LifeTimeDefault { get => lifeTimeDefault; set => lifeTimeDefault = value; }
+
     public OrderData CreateOrder()
     {
         totalOrders++;
