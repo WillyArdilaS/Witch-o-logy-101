@@ -20,11 +20,11 @@ public class DeadZoneDetector : MonoBehaviour
         {
             if (itemType == ItemData.ItemType.Bottle)
             {
-                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 0, GlobalGameManager.instance.AudioManager.IngredientFallVol);
+                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 0, GlobalGameManager.instance.AudioManager.BottleFallVol);
             }
             else if (itemType == ItemData.ItemType.Ingredient)
             {
-                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 1, GlobalGameManager.instance.AudioManager.BottleFallVol);
+                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 1, GlobalGameManager.instance.AudioManager.IngredientFallVol);
             }
             
             DeadZoneEntered?.Invoke();

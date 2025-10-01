@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     // === Properties ===
     public GameState State { get => state; set => state = value; }
+    public int GameDuration => gameDuration;
     public int GameTimer => gameTimer;
 
     void Awake()
