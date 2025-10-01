@@ -14,14 +14,17 @@ public class LoadSceneButton : MonoBehaviour
     {
         buttonUI = GetComponent<Button>();
 
-        if (GlobalGameManager.instance != null)
-        {
-            buttonUI.onClick.AddListener(ChangeScene);
-        }
+        buttonUI.onClick.AddListener(PlaySFX);
+        buttonUI.onClick.AddListener(ChangeScene);
+    }
+
+    private void PlaySFX()
+    {
+        GlobalGameManager.instance.AudioManager.PlayUISFX(AudioManager.UISfxType.Button, 0, GlobalGameManager.instance.AudioManager.ButtonClickVol);
     }
 
     private void ChangeScene()
     {
         GlobalGameManager.instance.SceneSwitchManager.LoadScene(sceneName);
-    }
+    } 
 }

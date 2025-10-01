@@ -463,16 +463,16 @@ MonoBehaviour:
     uiSfx:
     - {fileID: 8300000, guid: 78652ebd28125cf4ab58d9fd099e2e63, type: 3}
   mainMenuSongVol: 0.94
-  gameSongVol: 0.05
+  gameSongVol: 0.07
   recipeBookVol: 1
   bottleFallVol: 0.9
   ingredientFallVol: 0.7
   cauldronDropVol: 0.8
   newOrderVol: 0.7
-  deliverOrderVol: 0.7
+  deliverOrderVol: 0.6
   correctOrderVol: 0.7
   wrongOrderVol: 0.7
   anyScrollBurntVol: 0.25
   lastScrollBurntVol: 0.2
   successfulDayVol: 0.5
-  buttonClickVol: 0.5
+  buttonClickVol: 0.4

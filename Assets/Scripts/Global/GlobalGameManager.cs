@@ -27,8 +27,6 @@ public class GlobalGameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
     }
 
     private void InitializeManagers()

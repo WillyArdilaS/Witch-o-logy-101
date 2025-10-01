@@ -38,7 +38,10 @@ public class Pause : MonoBehaviour
 
         pauseUI.SetActive(false);
         Time.timeScale = 1;
+    }
 
+    public void PlayButtonSFX()
+    {
         GlobalGameManager.instance.AudioManager.PlayUISFX(AudioManager.UISfxType.Button, 0, GlobalGameManager.instance.AudioManager.ButtonClickVol);
     }
 }
