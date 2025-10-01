@@ -72,6 +72,7 @@ public class OrderManager : MonoBehaviour
         }
     }
 
+    // === Order management methods ===
     private IEnumerator CreateNewOrder()
     {
         while (activeOrders.Count < orderContainerManager.OrderContainers.Count)

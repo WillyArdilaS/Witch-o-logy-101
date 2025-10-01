@@ -1382,7 +1382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fb9cf6fb3fd0b44af76f5e6265d8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeBook: {fileID: 11400000, guid: 3c7a078554247f6419fb9b9031190a05, type: 2}
+  dynamicDifficultyScript: {fileID: 1714413802}
+  recipeBook: {fileID: 0}
   cauldronImages:
   - {fileID: 21300000, guid: 98f04706eb7e12d45b10baba61a04201, type: 3}
   - {fileID: 21300000, guid: 69182fdd2b6f4c04eb9b32055cb82d52, type: 3}
@@ -7020,7 +7021,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fb9cf6fb3fd0b44af76f5e6265d8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeBook: {fileID: 11400000, guid: 3c7a078554247f6419fb9b9031190a05, type: 2}
+  dynamicDifficultyScript: {fileID: 1714413802}
+  recipeBook: {fileID: 0}
   cauldronImages:
   - {fileID: 21300000, guid: 98f04706eb7e12d45b10baba61a04201, type: 3}
   - {fileID: 21300000, guid: 69182fdd2b6f4c04eb9b32055cb82d52, type: 3}
@@ -7126,7 +7128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  minutes: 13
+  minutes: 8
   seconds: 0
   gameTimer: 0
 --- !u!4 &1714413800
@@ -7175,38 +7177,38 @@ MonoBehaviour:
     seconds: 0
     canCreateNewOrder: 1
     newRecipeBook: {fileID: 11400000, guid: b6f51ed1ff7091445aebd51bc01a1b27, type: 2}
-    newOrderLifeTime: 40
-    newOrderCooldown: 25
-    newOrderWarningTime: 13
-  - minutes: 2
+    newOrderLifeTime: 30
+    newOrderCooldown: 8
+    newOrderWarningTime: 10
+  - minutes: 1
     seconds: 0
     canCreateNewOrder: 1
     newRecipeBook: {fileID: 11400000, guid: 3c7a078554247f6419fb9b9031190a05, type: 2}
-    newOrderLifeTime: 30
-    newOrderCooldown: 15
+    newOrderLifeTime: 25
+    newOrderCooldown: 6
+    newOrderWarningTime: 10
+  - minutes: 2
+    seconds: 30
+    canCreateNewOrder: 1
+    newRecipeBook: {fileID: 11400000, guid: 0919868c27de4bd4ebb3edb0e0c88da3, type: 2}
+    newOrderLifeTime: 20
+    newOrderCooldown: 5
     newOrderWarningTime: 10
   - minutes: 5
     seconds: 0
     canCreateNewOrder: 1
-    newRecipeBook: {fileID: 11400000, guid: 0919868c27de4bd4ebb3edb0e0c88da3, type: 2}
-    newOrderLifeTime: 25
-    newOrderCooldown: 13
-    newOrderWarningTime: 7
-  - minutes: 9
+    newRecipeBook: {fileID: 11400000, guid: 8dd6c05a3d82df246ac410f5a36e652e, type: 2}
+    newOrderLifeTime: 15
+    newOrderCooldown: 4
+    newOrderWarningTime: 5
+  - minutes: 7
     seconds: 0
     canCreateNewOrder: 1
     newRecipeBook: {fileID: 11400000, guid: 8dd6c05a3d82df246ac410f5a36e652e, type: 2}
-    newOrderLifeTime: 18
-    newOrderCooldown: 11
+    newOrderLifeTime: 10
+    newOrderCooldown: 4
     newOrderWarningTime: 5
-  - minutes: 12
-    seconds: 0
-    canCreateNewOrder: 1
-    newRecipeBook: {fileID: 11400000, guid: 8dd6c05a3d82df246ac410f5a36e652e, type: 2}
-    newOrderLifeTime: 13
-    newOrderCooldown: 9
-    newOrderWarningTime: 5
-  - minutes: 12
+  - minutes: 7
     seconds: 50
     canCreateNewOrder: 0
     newRecipeBook: {fileID: 0}
@@ -7769,7 +7771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fb9cf6fb3fd0b44af76f5e6265d8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeBook: {fileID: 11400000, guid: 3c7a078554247f6419fb9b9031190a05, type: 2}
+  dynamicDifficultyScript: {fileID: 1714413802}
+  recipeBook: {fileID: 0}
   cauldronImages:
   - {fileID: 21300000, guid: 98f04706eb7e12d45b10baba61a04201, type: 3}
   - {fileID: 21300000, guid: 69182fdd2b6f4c04eb9b32055cb82d52, type: 3}
@@ -8772,7 +8775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783b49c93cfa4f449804d2edc6f46f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCreationDelay: 3
+  startCreationDelay: 2
   orderCooldown: 0
   orderWarningTime: 0
   activeOrders: []

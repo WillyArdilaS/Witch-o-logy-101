@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     [Header("Game duration")]
     [SerializeField, Min(0)] private int minutes;
     [SerializeField, Range(0, 59)] private int seconds;
+    [SerializeField] private int currentGameTime = 0;
     private int gameDuration;
-    [SerializeField] private int gameTimer = 0;
 
     // === Score ===
     public static int starsEarned = 0;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     // === Properties ===
     public GameState State { get => state; set => state = value; }
     public int GameDuration => gameDuration;
-    public int GameTimer => gameTimer;
+    public int CurrentGameTimer => currentGameTime;
 
     void Awake()
     {
@@ -73,10 +73,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartGameTimer()
     {
-        while (gameTimer < gameDuration)
+        while (currentGameTime < gameDuration)
         {
             yield return new WaitForSeconds(1);
-            gameTimer++;
+            currentGameTime++;
         }
 
         LoadGameOver(orderContainerManagerScript.OrderContainers.Count);

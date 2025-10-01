@@ -40,7 +40,7 @@ public class DynamicDifficulty : MonoBehaviour
     [SerializeField] private DifficultyEvent[] difficultyEventsList;
     private DifficultyEvent currentDifficultyEvent;
     private Queue<int> pendingTimes = new();
-    private int currenTime = 0;
+    private int currentTime = 0;
 
     // === Coroutines ===
     private Coroutine changeDifficultyRoutine;
@@ -63,10 +63,10 @@ public class DynamicDifficulty : MonoBehaviour
 
     void Update()
     {
-        currenTime = GameManager.instance.GameTimer;
+        currentTime = GameManager.instance.CurrentGameTimer;
 
         // Check if there are pending timestamps AND if the current time matches the next scheduled timestamp
-        if (pendingTimes.Count > 0 && currenTime == pendingTimes.Peek())
+        if (pendingTimes.Count > 0 && currentTime == pendingTimes.Peek())
         {
             int matchTime = pendingTimes.Dequeue(); // Remove the matched timestamp from the queue
             currentDifficultyEvent = difficultyEventsList.First(difEvent => (difEvent.Minutes * 60) + difEvent.Seconds == matchTime); // Find the corresponding DifficultyEvent struct 

@@ -21,6 +21,7 @@ public class OrderCreator : MonoBehaviour
     public RecipeBookData RecipeBook { get => recipeBook; set => recipeBook = value; }
     public float LifeTimeDefault { get => lifeTimeDefault; set => lifeTimeDefault = value; }
 
+    // === Order creation methods ===
     public OrderData CreateOrder()
     {
         totalOrders++;
