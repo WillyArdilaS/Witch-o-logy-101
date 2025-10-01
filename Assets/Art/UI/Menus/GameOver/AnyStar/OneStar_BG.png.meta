@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3fc0086a1b1a6944eacc468e5c7e874e
+guid: a6dc4451fcb88b04c92e14caebcda093
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1650349508679521944
-    second: OneStar_BG_0
+      213: 8898332002567344123
+    second: Menus_Witch-o-logy_101_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OneStar_BG_0
+      name: Menus_Witch-o-logy_101_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 896551c522837e610800000000000000
-      internalID: 1650349508679521944
+      spriteID: bff448a9fc93d7b70800000000000000
+      internalID: 8898332002567344123
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      OneStar_BG_0: 1650349508679521944
+      Menus_Witch-o-logy_101_0: 8898332002567344123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
