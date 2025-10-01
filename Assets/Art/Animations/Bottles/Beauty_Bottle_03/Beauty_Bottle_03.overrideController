@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Beauty_Bottle_03
+  m_Controller: {fileID: 9100000, guid: cf0dc86af28e8014bb99554fb4a1b891, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 145444a270870614a91611d2f22109ec, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 74a734971cf93fb4ea1d87bd47fea1bf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 458df393f9c05b74b85d17b6ff7febc5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ed94433a2e7385547aef8c00bd9f9877, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0d88cc11852cc3a41a7a3deaef755539, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 11d0eea10f37f454ca7a4bff3bf336d9, type: 2}
