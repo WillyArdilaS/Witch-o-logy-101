@@ -41,5 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: HUD
+    uniqueID: 698244215
+    locked: 0
+  - name: DraggedItem
+    uniqueID: 4270245961
+    locked: 0
+  - name: UI
+    uniqueID: 2949849125
+    locked: 0
   m_RenderingLayers:
   - Default
