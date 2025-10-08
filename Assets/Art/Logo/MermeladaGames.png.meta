@@ -3,8 +3,8 @@ guid: dc1e8c767c54d434686896bb48fa8efe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4191911319889675632
-    second: Mermelada Logo_0
+      213: -4918451495470409793
+    second: MermeladaGames_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mermelada Logo_0
+      name: MermeladaGames_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07586ffb229ac2a30800000000000000
-      internalID: 4191911319889675632
+      spriteID: fb75f778c662ebbb0800000000000000
+      internalID: -4918451495470409793
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mermelada Logo_0: 4191911319889675632
+      MermeladaGames_0: -4918451495470409793
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
