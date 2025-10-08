@@ -7,7 +7,6 @@ public class ViewportDetector : MonoBehaviour
     // === Item ===
     private SpriteRenderer spriteRenderer;
     private readonly Vector3[] spriteCorners = new Vector3[4];
-    private ItemData.ItemType itemType;
 
     // === Camera ===
     private Camera mainCam;
@@ -19,7 +18,6 @@ public class ViewportDetector : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        itemType = GetComponent<DraggableItem>().ItemData.Type;
         mainCam = Camera.main;
     }
 
@@ -50,11 +48,11 @@ public class ViewportDetector : MonoBehaviour
             isOutOfView = true;
 
             // Validate the item type to play the corresponding sound
-            if (itemType == ItemData.ItemType.Bottle)
+            if (gameObject.CompareTag("CrystalItem"))
             {
                 GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 0, GlobalGameManager.instance.AudioManager.BottleFallVol);
             }
-            else if (itemType == ItemData.ItemType.Ingredient)
+            else if (gameObject.CompareTag("SolidItem"))
             {
                 GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 1, GlobalGameManager.instance.AudioManager.IngredientFallVol);
             }
