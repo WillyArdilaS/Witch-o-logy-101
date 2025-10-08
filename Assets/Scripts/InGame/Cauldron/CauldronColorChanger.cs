@@ -6,7 +6,7 @@ using UnityEngine;
 public class CauldronColorChanger : MonoBehaviour
 {
     // === Scripts ===
-    [SerializeField] private DynamicDifficulty dynamicDifficultyScript; 
+    [SerializeField] private ProgressiveDifficulty progressiveDifficultyScript; 
     private DropArea dropAreaScript;
     private IngredientContainer ingredientContainerScript;
 
@@ -40,8 +40,8 @@ public class CauldronColorChanger : MonoBehaviour
 
     void Update()
     {
-        if (dynamicDifficultyScript.CurrentDifficultyEvent.NewRecipeBook == recipeBook) return;
-        recipeBook = dynamicDifficultyScript.CurrentDifficultyEvent.NewRecipeBook;
+        if (progressiveDifficultyScript.CurrentDifficultyEvent.NewRecipeBook == recipeBook) return;
+        recipeBook = progressiveDifficultyScript.CurrentDifficultyEvent.NewRecipeBook;
     }
 
     private void ChangeColor()

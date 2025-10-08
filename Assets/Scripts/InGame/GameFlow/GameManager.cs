@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     // === Scripts ===
     private OrderManager orderManagerScript;
     private OrderContainerManager orderContainerManagerScript;
-    private DynamicDifficulty dynamicDifficultyScript;
+    private ProgressiveDifficulty progressiveDifficultyScript;
 
     // === Singleton ===
     public static GameManager instance;
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         orderManagerScript = GetComponentInChildren<OrderManager>();
         orderContainerManagerScript = GetComponentInChildren<OrderContainerManager>();
-        dynamicDifficultyScript = GetComponent<DynamicDifficulty>();
+        progressiveDifficultyScript = GetComponent<ProgressiveDifficulty>();
         
         // Singleton
         if (instance == null)
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     private bool CheckOrderCreationAllowed()
     {
         if (orderManagerScript.ActiveOrders.Count >= orderContainerManagerScript.OrderContainers.Count) return false;
-        if (!dynamicDifficultyScript.CurrentDifficultyEvent.CanCreateNewOrder) return false;
+        if (!progressiveDifficultyScript.CurrentDifficultyEvent.CanCreateNewOrder) return false;
 
         return true;
     }

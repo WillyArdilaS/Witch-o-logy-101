@@ -30,7 +30,7 @@ public struct DifficultyEvent
 }
 
 
-public class DynamicDifficulty : MonoBehaviour
+public class ProgressiveDifficulty : MonoBehaviour
 {
     // === Scripts ===
     private OrderManager orderManagerScript;
