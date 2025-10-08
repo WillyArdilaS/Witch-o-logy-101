@@ -7,6 +7,7 @@ public class ViewportDetector : MonoBehaviour
     // === Item ===
     private SpriteRenderer spriteRenderer;
     private readonly Vector3[] spriteCorners = new Vector3[4];
+    private ItemData.ItemType itemType;
 
     // === Camera ===
     private Camera mainCam;
@@ -18,6 +19,8 @@ public class ViewportDetector : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        itemType = GetComponent<DraggableItem>().ItemData.Type;
+
         mainCam = Camera.main;
     }
 
@@ -25,7 +28,7 @@ public class ViewportDetector : MonoBehaviour
     {
         // Calculating sprite corners in viewport
         Bounds bounds = spriteRenderer.bounds;
-        
+
         spriteCorners[0] = mainCam.WorldToViewportPoint(new Vector3(bounds.min.x, bounds.min.y)); // bottom-left
         spriteCorners[1] = mainCam.WorldToViewportPoint(new Vector3(bounds.min.x, bounds.max.y)); // top-left
         spriteCorners[2] = mainCam.WorldToViewportPoint(new Vector3(bounds.max.x, bounds.min.y)); // bottom-right
@@ -48,13 +51,13 @@ public class ViewportDetector : MonoBehaviour
             isOutOfView = true;
 
             // Validate the item type to play the corresponding sound
-            if (gameObject.CompareTag("CrystalItem"))
-            {
-                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 0, GlobalGameManager.instance.AudioManager.BottleFallVol);
-            }
-            else if (gameObject.CompareTag("SolidItem"))
+            if (itemType == ItemData.ItemType.Ingredient && gameObject.CompareTag("SolidItem"))
             {
                 GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 1, GlobalGameManager.instance.AudioManager.IngredientFallVol);
+            }
+            else
+            {
+                GlobalGameManager.instance.AudioManager.PlaySFX(AudioManager.SfxType.Item, 0, GlobalGameManager.instance.AudioManager.BottleFallVol);
             }
 
             ViewportExit?.Invoke();
