@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Animations;
 using UnityEngine;
 
 // === Structures ===
@@ -21,7 +20,7 @@ public struct DifficultyEvent
     [SerializeField] private float newOrderWarningTime;
 
     [Header("Message Settings")]
-    [SerializeField] private AnimatorController messageAnimController;
+    [SerializeField] private RuntimeAnimatorController messageAnimController;
 
     // === Properties ===
     public int Minutes => minutes;
@@ -31,7 +30,7 @@ public struct DifficultyEvent
     public float NewOrderLifeTime => newOrderLifeTime;
     public float NewOrderCooldown => newOrderCooldown;
     public float NewOrderWarningTime => newOrderWarningTime;
-    public AnimatorController MessageAnimController => messageAnimController;
+    public RuntimeAnimatorController MessageAnimController => messageAnimController;
 }
 
 
