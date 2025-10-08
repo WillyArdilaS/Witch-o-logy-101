@@ -465,7 +465,7 @@ MonoBehaviour:
   mainMenuSongVol: 0.94
   gameSongVol: 0.07
   recipeBookVol: 1
-  bottleFallVol: 0.9
+  bottleFallVol: 0.8
   ingredientFallVol: 0.7
   cauldronDropVol: 0.7
   newOrderVol: 0.65
