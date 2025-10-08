@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 
 // === Structures ===
@@ -19,6 +20,9 @@ public struct DifficultyEvent
     [SerializeField] private float newOrderCooldown;
     [SerializeField] private float newOrderWarningTime;
 
+    [Header("Message Settings")]
+    [SerializeField] private AnimatorController messageAnimController;
+
     // === Properties ===
     public int Minutes => minutes;
     public int Seconds => seconds;
@@ -27,6 +31,7 @@ public struct DifficultyEvent
     public float NewOrderLifeTime => newOrderLifeTime;
     public float NewOrderCooldown => newOrderCooldown;
     public float NewOrderWarningTime => newOrderWarningTime;
+    public AnimatorController MessageAnimController => messageAnimController;
 }
 
 
@@ -41,6 +46,11 @@ public class ProgressiveDifficulty : MonoBehaviour
     private DifficultyEvent currentDifficultyEvent;
     private Queue<int> pendingTimes = new();
     private int currentTime = 0;
+
+    // === Messages ===
+    [Header("Message Management")]
+    [SerializeField] private GameObject messagePrefab;
+    [SerializeField] private GameObject messageContainer;
 
     // === Coroutines ===
     private Coroutine changeDifficultyRoutine;
@@ -84,8 +94,16 @@ public class ProgressiveDifficulty : MonoBehaviour
             orderCreatorScript.LifeTimeDefault = difficultyEvent.NewOrderLifeTime;
             orderManagerScript.OrderCooldown = difficultyEvent.NewOrderCooldown;
             orderManagerScript.OrderWarningTime = difficultyEvent.NewOrderWarningTime;
+
+            if (difficultyEvent.MessageAnimController != null) ShowDifficultyMessage(difficultyEvent);
         }
-        
+
         yield return null;
+    }
+
+    private void ShowDifficultyMessage(DifficultyEvent difficultyEvent)
+    {
+        GameObject newMessage = Instantiate(messagePrefab, messageContainer.transform);
+        newMessage.GetComponent<MessageManager>().Animator.runtimeAnimatorController = difficultyEvent.MessageAnimController;
     }
 }

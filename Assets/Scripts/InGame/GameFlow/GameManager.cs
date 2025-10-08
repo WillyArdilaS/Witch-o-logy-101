@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentGameTime = 0;
     private int gameDuration;
 
+    // === Messages ===
+    
+
     // === Score ===
     public static int starsEarned = 0;
 

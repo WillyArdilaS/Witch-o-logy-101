@@ -437,6 +437,41 @@ RectTransform:
   m_AnchoredPosition: {x: -3, y: 13}
   m_SizeDelta: {x: 45, y: 26.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &176008122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176008123}
+  m_Layer: 5
+  m_Name: Messages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &176008123
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176008122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 503858602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &183542625
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -26.2}
+  m_AnchoredPosition: {x: 0, y: -26.200012}
   m_SizeDelta: {x: 145.3326, y: 145.3326}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &324759224
@@ -1382,8 +1417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fb9cf6fb3fd0b44af76f5e6265d8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dynamicDifficultyScript: {fileID: 1714413802}
-  recipeBook: {fileID: 0}
+  progressiveDifficultyScript: {fileID: 1714413802}
   cauldronImages:
   - {fileID: 21300000, guid: 98f04706eb7e12d45b10baba61a04201, type: 3}
   - {fileID: 21300000, guid: 69182fdd2b6f4c04eb9b32055cb82d52, type: 3}
@@ -1489,7 +1523,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1988,6 +2022,7 @@ RectTransform:
   - {fileID: 324759223}
   - {fileID: 641290307}
   - {fileID: 873576970}
+  - {fileID: 176008123}
   m_Father: {fileID: 389792169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6943,8 +6978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fb9cf6fb3fd0b44af76f5e6265d8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dynamicDifficultyScript: {fileID: 1714413802}
-  recipeBook: {fileID: 0}
+  progressiveDifficultyScript: {fileID: 1714413802}
   cauldronImages:
   - {fileID: 21300000, guid: 98f04706eb7e12d45b10baba61a04201, type: 3}
   - {fileID: 21300000, guid: 69182fdd2b6f4c04eb9b32055cb82d52, type: 3}
@@ -7102,6 +7136,7 @@ MonoBehaviour:
     newOrderLifeTime: 30
     newOrderCooldown: 8
     newOrderWarningTime: 10
+    messageAnimController: {fileID: 0}
   - minutes: 1
     seconds: 0
     canCreateNewOrder: 1
@@ -7109,6 +7144,7 @@ MonoBehaviour:
     newOrderLifeTime: 25
     newOrderCooldown: 6
     newOrderWarningTime: 10
+    messageAnimController: {fileID: 9100000, guid: 051ba72828a2ef845a09311485b750f3, type: 2}
   - minutes: 2
     seconds: 30
     canCreateNewOrder: 1
@@ -7116,6 +7152,7 @@ MonoBehaviour:
     newOrderLifeTime: 20
     newOrderCooldown: 4
     newOrderWarningTime: 10
+    messageAnimController: {fileID: 9100000, guid: 051ba72828a2ef845a09311485b750f3, type: 2}
   - minutes: 5
     seconds: 0
     canCreateNewOrder: 1
@@ -7123,6 +7160,7 @@ MonoBehaviour:
     newOrderLifeTime: 15
     newOrderCooldown: 3
     newOrderWarningTime: 5
+    messageAnimController: {fileID: 9100000, guid: 051ba72828a2ef845a09311485b750f3, type: 2}
   - minutes: 7
     seconds: 0
     canCreateNewOrder: 1
@@ -7130,6 +7168,7 @@ MonoBehaviour:
     newOrderLifeTime: 10
     newOrderCooldown: 3
     newOrderWarningTime: 5
+    messageAnimController: {fileID: 9100000, guid: 2253fda57bf788348bd6ce54798bae77, type: 2}
   - minutes: 7
     seconds: 50
     canCreateNewOrder: 0
@@ -7137,6 +7176,9 @@ MonoBehaviour:
     newOrderLifeTime: 0
     newOrderCooldown: 0
     newOrderWarningTime: 0
+    messageAnimController: {fileID: 0}
+  messagePrefab: {fileID: 1553766044642864826, guid: 572bcce3679d6634eaee53c776dd6bac, type: 3}
+  messageContainer: {fileID: 176008122}
 --- !u!1 &1773214086
 GameObject:
   m_ObjectHideFlags: 0
@@ -7693,8 +7735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fb9cf6fb3fd0b44af76f5e6265d8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dynamicDifficultyScript: {fileID: 1714413802}
-  recipeBook: {fileID: 0}
+  progressiveDifficultyScript: {fileID: 1714413802}
   cauldronImages:
   - {fileID: 21300000, guid: 98f04706eb7e12d45b10baba61a04201, type: 3}
   - {fileID: 21300000, guid: 69182fdd2b6f4c04eb9b32055cb82d52, type: 3}

@@ -11,7 +11,7 @@ public class CauldronColorChanger : MonoBehaviour
     private IngredientContainer ingredientContainerScript;
 
     // === Recipes data ===
-    [SerializeField] private RecipeBookData recipeBook;
+    private RecipeBookData recipeBook;
     private RecipeData matchingRecipe;
 
     // === Cauldron sprite ===
