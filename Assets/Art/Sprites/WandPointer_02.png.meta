@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 055a77b2207e9f84ab2216bedccfc5fc
+guid: bca9e0ec7901a754abf543df80adfd4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4421300922047078791
-    second: Wand_0
+      213: -4306483855762374360
+    second: WandPointer_02_0
+  - first:
+      213: 3739633714900100845
+    second: WandPointer_02_1
+  - first:
+      213: 1380909026838611914
+    second: WandPointer_02_2
+  - first:
+      213: 9023798025132126638
+    second: WandPointer_02_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +33,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +66,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 7
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -74,7 +83,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wand_0
+      name: WandPointer_02_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 31
-        width: 416
-        height: 794
+        x: 36
+        y: 413
+        width: 56
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97ed6488c3264a2c0800000000000000
-      internalID: -4421300922047078791
+      spriteID: 821445affbb4c34c0800000000000000
+      internalID: -4306483855762374360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WandPointer_02_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 406
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6e1bedc09d5e330800000000000000
+      internalID: 3739633714900100845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WandPointer_02_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 24
+        width: 199
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac788db8179f92310800000000000000
+      internalID: 1380909026838611914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WandPointer_02_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 395
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea13fd46e78fa3d70800000000000000
+      internalID: 9023798025132126638
       vertices: []
       indices: 
       edges: []
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wand_0: -4421300922047078791
+      WandPointer_02_0: -4306483855762374360
+      WandPointer_02_1: 3739633714900100845
+      WandPointer_02_2: 1380909026838611914
+      WandPointer_02_3: 9023798025132126638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

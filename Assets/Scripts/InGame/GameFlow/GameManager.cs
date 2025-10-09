@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     // === Scripts ===
     private OrderManager orderManagerScript;
     private OrderContainerManager orderContainerManagerScript;
-    private DynamicDifficulty dynamicDifficultyScript;
+    private ProgressiveDifficulty progressiveDifficultyScript;
 
     // === Singleton ===
     public static GameManager instance;
@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     [SerializeField, Range(0, 59)] private int seconds;
     [SerializeField] private int currentGameTime = 0;
     private int gameDuration;
+
+    // === Messages ===
+    
 
     // === Score ===
     public static int starsEarned = 0;
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         orderManagerScript = GetComponentInChildren<OrderManager>();
         orderContainerManagerScript = GetComponentInChildren<OrderContainerManager>();
-        dynamicDifficultyScript = GetComponent<DynamicDifficulty>();
+        progressiveDifficultyScript = GetComponent<ProgressiveDifficulty>();
         
         // Singleton
         if (instance == null)
@@ -85,7 +88,7 @@ public class GameManager : MonoBehaviour
     private bool CheckOrderCreationAllowed()
     {
         if (orderManagerScript.ActiveOrders.Count >= orderContainerManagerScript.OrderContainers.Count) return false;
-        if (!dynamicDifficultyScript.CurrentDifficultyEvent.CanCreateNewOrder) return false;
+        if (!progressiveDifficultyScript.CurrentDifficultyEvent.CanCreateNewOrder) return false;
 
         return true;
     }

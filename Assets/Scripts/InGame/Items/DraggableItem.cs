@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
 public class DraggableItem : MonoBehaviour
 {
     // === Item ===
@@ -10,10 +9,10 @@ public class DraggableItem : MonoBehaviour
     // === Drag movement ===
     private Rigidbody2D rb2D;    
 
-    // === Order in layer ===
-    [SerializeField] private int newLayerNumber;
+    // === Sorting layer ===
     private SpriteRenderer spriteRend;
-    private int originalLayerNumber;
+    private string newSortingLayerName = "DraggedItem";
+    private string originalSortingLayerName;
 
     // === Properties ===
     public ItemData ItemData => itemData;
@@ -21,14 +20,16 @@ public class DraggableItem : MonoBehaviour
     protected virtual void Awake()
     {
         itemData.StartPosition = transform.position;
+
         rb2D = GetComponent<Rigidbody2D>();
         spriteRend = GetComponent<SpriteRenderer>();
-        originalLayerNumber = spriteRend.sortingOrder;
+        
+        originalSortingLayerName = spriteRend.sortingLayerName;
     }
 
     public void ResetItem()
     {
-        spriteRend.sortingOrder = originalLayerNumber; // Reset order in layer
+        spriteRend.sortingLayerName = originalSortingLayerName; // Reset sorting layer
         rb2D.bodyType = RigidbodyType2D.Static;
         gameObject.SetActive(true);
     }
@@ -38,7 +39,7 @@ public class DraggableItem : MonoBehaviour
         if (GameManager.instance.State != GameManager.GameState.Playing) return;
 
         rb2D.bodyType = RigidbodyType2D.Static;
-        spriteRend.sortingOrder = newLayerNumber;
+        spriteRend.sortingLayerName = newSortingLayerName;
     }    
 
     void OnMouseDrag()

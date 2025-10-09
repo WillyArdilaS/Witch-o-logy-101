@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc1e8c767c54d434686896bb48fa8efe
+guid: 0217c3b3f5d3a6b4185bf66422a4ab59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4918451495470409793
-    second: MermeladaGames_0
+      213: -6429799276169202136
+    second: StoreClossingMessage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MermeladaGames_0
+      name: StoreClossingMessage_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2388
-        height: 1668
+        width: 536
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb75f778c662ebbb0800000000000000
-      internalID: -4918451495470409793
+      spriteID: 826fed6ff93c4c6a0800000000000000
+      internalID: -6429799276169202136
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MermeladaGames_0: -4918451495470409793
+      StoreClossingMessage_0: -6429799276169202136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

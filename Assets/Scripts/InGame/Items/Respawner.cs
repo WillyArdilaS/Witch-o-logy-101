@@ -6,7 +6,7 @@ public class Respawner : MonoBehaviour
 {
     // === Scripts ===
     private DraggableItem draggableItemScript;
-    private DeadZoneDetector detectDeadZoneScript;
+    private ViewportDetector detectDeadZoneScript;
     private DropArea dropAreaScript;
     private OrderChecker orderCheckerScript;
 
@@ -22,9 +22,9 @@ public class Respawner : MonoBehaviour
     void Awake()
     {
         draggableItemScript = GetComponentInChildren<DraggableItem>();
-        detectDeadZoneScript = GetComponentInChildren<DeadZoneDetector>();
+        detectDeadZoneScript = GetComponentInChildren<ViewportDetector>();
 
-        detectDeadZoneScript.DeadZoneEntered += StartCooldown;
+        detectDeadZoneScript.ViewportExit += StartCooldown;
 
         if (transform.childCount > 0)
         {
